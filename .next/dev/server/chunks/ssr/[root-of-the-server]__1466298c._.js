@@ -232,10 +232,12 @@ __turbopack_context__.s([
     ()=>ActivitySection
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Desktop/We部/Web_club/node_modules/.pnpm/next@16.0.3_@babel+core@7.28.5_react-dom@19.2.0_react@19.2.0__react@19.2.0/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__ = __turbopack_context__.i("[project]/Desktop/We部/Web_club/node_modules/.pnpm/lucide-react@0.454.0_react@19.2.0/node_modules/lucide-react/dist/esm/icons/external-link.js [app-rsc] (ecmascript) <export default as ExternalLink>");
+;
 ;
 const activities = [
     {
-        title: "デプロイ向けチーム開発",
+        title: "チーム開発(デプロイ)",
         description: "1年間を通して実際にサービスをリリース。企画から設計、開発、運用までここで体験しよう!",
         detail: "技術選定や開発の進め方などはどんどん先輩や強強エンジニアに聞いていこう！！",
         tag: "週1 / オンライン"
@@ -243,14 +245,22 @@ const activities = [
     {
         title: "外部のハッカソン出場 (任意参加)",
         description: "チームで外部のハッカソンに参加し、実践的な開発経験を積みます。",
-        detail: "外部ハッカソンで何か賞を取ると就職活動めっちゃ有利です！",
-        tag: "年に1度 / 任意"
+        detail: "外部ハッカソンで受賞すれば就職活動の実績として超強力な武器になります。",
+        tag: "年に1度 / 任意",
+        linkLabel: "(例) 技育展 2025 (サポーターズ主催)",
+        linkUrl: "https://geek.supporterz.jp/geekten/2025"
     },
     {
         title: "就活は情報戦！？情報共有ラフ会",
         description: "就活の最新情報や企業研究、面接対策などをメンバー同士で共有します。",
         detail: "有料企業や大手の情報はなかなか学校では手に入りません！",
         tag: "月1 / ハイブリッド"
+    },
+    {
+        title: "OBOGコミュニティ構想 (準備中)",
+        description: "卒業後もつながり続け、インターンや企業情報を後輩に還元できる仕組みを整備予定。",
+        detail: "将来的にはこのコミュニティでOBOGが活躍できるよう、ナレッジ共有の仕組みを整えています。",
+        tag: "Coming Soon"
     }
 ];
 const steps = [
@@ -273,7 +283,7 @@ function ActivitySection() {
                             children: "Activity"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                            lineNumber: 37,
+                            lineNumber: 50,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -281,7 +291,7 @@ function ActivitySection() {
                             children: "活動内容"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                            lineNumber: 40,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -290,23 +300,23 @@ function ActivitySection() {
                                 "週に一度、集まり進捗の共有や開発、就活相談や雑談を行います。",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                                    lineNumber: 45,
+                                    lineNumber: 58,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                            lineNumber: 43,
+                            lineNumber: 56,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                    lineNumber: 36,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "mt-12 grid gap-6 md:grid-cols-3",
+                    className: "mt-12 grid gap-6 md:grid-cols-2",
                     children: activities.map((activity)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "h-full rounded-3xl border border-border/70 bg-white/90 p-6 shadow-sm",
                             children: [
@@ -315,7 +325,7 @@ function ActivitySection() {
                                     children: activity.tag
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                                    lineNumber: 55,
+                                    lineNumber: 68,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
@@ -323,7 +333,7 @@ function ActivitySection() {
                                     children: activity.title
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                                    lineNumber: 58,
+                                    lineNumber: 71,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -331,7 +341,7 @@ function ActivitySection() {
                                     children: activity.description
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                                    lineNumber: 61,
+                                    lineNumber: 74,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -339,18 +349,39 @@ function ActivitySection() {
                                     children: activity.detail
                                 }, void 0, false, {
                                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                                    lineNumber: 64,
+                                    lineNumber: 77,
                                     columnNumber: 15
+                                }, this),
+                                activity.linkUrl && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                    href: activity.linkUrl,
+                                    target: "_blank",
+                                    rel: "noopener noreferrer",
+                                    className: "mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80",
+                                    children: [
+                                        activity.linkLabel ?? "詳しく見る",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__["ExternalLink"], {
+                                            className: "h-4 w-4",
+                                            "aria-hidden": true
+                                        }, void 0, false, {
+                                            fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
+                                            lineNumber: 86,
+                                            columnNumber: 19
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
+                                    lineNumber: 79,
+                                    columnNumber: 17
                                 }, this)
                             ]
                         }, activity.title, true, {
                             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                            lineNumber: 51,
+                            lineNumber: 64,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                    lineNumber: 49,
+                    lineNumber: 62,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -361,7 +392,7 @@ function ActivitySection() {
                             children: "Join flow"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                            lineNumber: 70,
+                            lineNumber: 94,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -374,7 +405,7 @@ function ActivitySection() {
                                             children: index + 1
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                                            lineNumber: 79,
+                                            lineNumber: 103,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -382,35 +413,35 @@ function ActivitySection() {
                                             children: step
                                         }, void 0, false, {
                                             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                                            lineNumber: 82,
+                                            lineNumber: 106,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, step, true, {
                                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                                    lineNumber: 75,
+                                    lineNumber: 99,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                            lineNumber: 73,
+                            lineNumber: 97,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-                    lineNumber: 69,
+                    lineNumber: 93,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-            lineNumber: 35,
+            lineNumber: 48,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/We部/Web_club/components/activity-section.tsx",
-        lineNumber: 34,
+        lineNumber: 47,
         columnNumber: 5
     }, this);
 }

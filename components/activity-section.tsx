@@ -1,6 +1,8 @@
+import { ExternalLink } from "lucide-react";
+
 const activities = [
   {
-    title: "デプロイ向けチーム開発",
+    title: "チーム開発(デプロイ)",
     description:
       "1年間を通して実際にサービスをリリース。企画から設計、開発、運用までここで体験しよう!",
     detail:
@@ -11,8 +13,11 @@ const activities = [
     title: "外部のハッカソン出場 (任意参加)",
     description:
       "チームで外部のハッカソンに参加し、実践的な開発経験を積みます。",
-    detail: "外部ハッカソンで何か賞を取ると就職活動めっちゃ有利です！",
+    detail:
+      "外部ハッカソンで受賞すれば就職活動の実績として超強力な武器になります。",
     tag: "年に1度 / 任意",
+    linkLabel: "(例) 技育展 2025 (サポーターズ主催)",
+    linkUrl: "https://geek.supporterz.jp/geekten/2025",
   },
   {
     title: "就活は情報戦！？情報共有ラフ会",
@@ -20,6 +25,14 @@ const activities = [
       "就活の最新情報や企業研究、面接対策などをメンバー同士で共有します。",
     detail: "有料企業や大手の情報はなかなか学校では手に入りません！",
     tag: "月1 / ハイブリッド",
+  },
+  {
+    title: "OBOGコミュニティ構想 (準備中)",
+    description:
+      "卒業後もつながり続け、インターンや企業情報を後輩に還元できる仕組みを整備予定。",
+    detail:
+      "将来的にはこのコミュニティでOBOGが活躍できるよう、ナレッジ共有の仕組みを整えています。",
+    tag: "Coming Soon",
   },
 ];
 
@@ -46,7 +59,7 @@ export function ActivitySection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {activities.map((activity) => (
             <div
               key={activity.title}
@@ -62,6 +75,17 @@ export function ActivitySection() {
                 {activity.description}
               </p>
               <p className="mt-4 text-sm text-primary/80">{activity.detail}</p>
+              {activity.linkUrl && (
+                <a
+                  href={activity.linkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary/80"
+                >
+                  {activity.linkLabel ?? "詳しく見る"}
+                  <ExternalLink className="h-4 w-4" aria-hidden />
+                </a>
+              )}
             </div>
           ))}
         </div>
