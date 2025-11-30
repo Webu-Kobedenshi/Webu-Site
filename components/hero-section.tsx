@@ -105,7 +105,10 @@ export function HeroSection() {
         <h1 className="text-balance text-4xl font-black leading-tight text-foreground sm:text-5xl md:text-6xl">
           Web系企業の就活みんなで乗り切る
           <br className="hidden sm:block" />
-          webコミュニティ「We部」
+          webコミュニティ
+          <span className="bg-gradient-to-r from-primary via-pink-500 to-accent bg-clip-text text-transparent drop-shadow-sm">
+            「We部」
+          </span>
           <span className="block text-base font-medium text-muted-foreground">
             〜立ち上げメンバーがwebしかわからないので〜
           </span>

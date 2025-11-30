@@ -1,11 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, MessageSquareHeart } from "lucide-react";
 
-const perks = [
-  "ITエキスパート学科",
-  "ゲーム学科でもWebに興味があるならOK",
-  "まずは雑談だけでも歓迎",
-];
+const perks = ["初学者歓迎！！", "Web系企業志望者向け", "学内最大規模にする！"];
 
 export function ContactSection() {
   return (
@@ -42,17 +38,9 @@ export function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Googleフォームで問い合わせ
+              申し込み・面談はこちらから
               <ExternalLink className="h-4 w-4" />
             </a>
-          </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="w-full max-w-xs border-primary/40 bg-white/80 text-primary"
-          >
-            <a href="mailto:hello@webu.community">メールで相談する</a>
           </Button>
         </div>
         <p className="mt-6 text-sm text-muted-foreground">
