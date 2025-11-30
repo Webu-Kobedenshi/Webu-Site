@@ -38,7 +38,7 @@ export function ContactSection() {
             className="w-full max-w-xs gap-2 bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90"
           >
             <a
-              href="https://forms.google.com"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe7OkkLIouK8q6D9doWbvVApyKHpb9BIXULKz_I_i94VBfIsQ/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
             >
