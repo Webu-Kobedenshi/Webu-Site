@@ -154,9 +154,9 @@ export function HeroSection() {
               <p className="text-md font-semibold text-card-foreground">
                 合同会社DMM.com
               </p>
-              <p className="text-md font-semibold text-card-foreground">
+              {/* <p className="text-md font-semibold text-card-foreground">
                 株式会社Digeon
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
