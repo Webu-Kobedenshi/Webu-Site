@@ -254,9 +254,9 @@ const activities = [
     }
 ];
 const steps = [
-    "Slackに招待 & 自己紹介",
-    "気になる会にゆるっと参加",
-    "メンターと1on1で作戦会議"
+    "このコミュニティ気になるなあ〜",
+    "まずは話聞くぜ！",
+    "参加しよ!と決めるとSlackに参加"
 ];
 function ActivitySection() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -430,8 +430,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_
 ;
 ;
 const perks = [
-    "24時間以内に返信",
-    "カメラオフでOK",
+    "ITエキスパート学科",
+    "ゲーム学科でもWebに興味があるならOK",
     "まずは雑談だけでも歓迎"
 ];
 function ContactSection() {
@@ -448,30 +448,30 @@ function ContactSection() {
                             className: "h-4 w-4"
                         }, void 0, false, {
                             fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                            lineNumber: 11,
+                            lineNumber: 15,
                             columnNumber: 11
                         }, this),
                         "Contact"
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                    lineNumber: 10,
+                    lineNumber: 14,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                     className: "mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl",
-                    children: "まずは気軽にお話しましょう"
+                    children: "興味のある学生はぜひ！！！"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                    lineNumber: 14,
+                    lineNumber: 18,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     className: "mx-auto mt-4 max-w-2xl text-muted-foreground text-pretty",
-                    children: "「入会前に雰囲気を知りたい」「キャリアの悩みを整理したい」など、どんなテーマでもOK。短いメッセージで構いません。"
+                    children: "We部は学内最大規模のテックコミュニティを目指しています。"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                    lineNumber: 17,
+                    lineNumber: 21,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -481,12 +481,12 @@ function ContactSection() {
                             children: perk
                         }, perk, false, {
                             fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                            lineNumber: 22,
+                            lineNumber: 26,
                             columnNumber: 13
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                    lineNumber: 20,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -506,18 +506,18 @@ function ContactSection() {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 46,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                                lineNumber: 36,
+                                lineNumber: 40,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                            lineNumber: 31,
+                            lineNumber: 35,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
@@ -530,18 +530,18 @@ function ContactSection() {
                                 children: "メールで相談する"
                             }, void 0, false, {
                                 fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                                lineNumber: 51,
+                                lineNumber: 55,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                            lineNumber: 45,
+                            lineNumber: 49,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                    lineNumber: 30,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_club$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$3_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$0_react$40$19$2e$2$2e$0_$5f$react$40$19$2e$2$2e$0$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -549,18 +549,18 @@ function ContactSection() {
                     children: "※参加費はかかりません。勧誘やゴリ押しは一切ありません。"
                 }, void 0, false, {
                     fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-                    lineNumber: 54,
+                    lineNumber: 58,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-            lineNumber: 9,
+            lineNumber: 13,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/Desktop/We部/Web_club/components/contact-section.tsx",
-        lineNumber: 8,
+        lineNumber: 12,
         columnNumber: 5
     }, this);
 }

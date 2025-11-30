@@ -105,7 +105,7 @@ var _s = __turbopack_context__.k.signature();
 const highlights = [
     {
         title: "週1活動",
-        description: "ゆるめの作業会＆おしゃべり会"
+        description: "全く雰囲気は硬くないので安心を"
     },
     {
         title: "初学者OK",

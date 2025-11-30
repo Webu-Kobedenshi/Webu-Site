@@ -95,7 +95,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Desktop$2f$We$_90e8$$2f$Web_
 const highlights = [
     {
         title: "週1活動",
-        description: "ゆるめの作業会＆おしゃべり会"
+        description: "全く雰囲気は硬くないので安心を"
     },
     {
         title: "初学者OK",

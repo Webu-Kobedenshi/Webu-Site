@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, MessageSquareHeart } from "lucide-react";
 
-const perks = ["24時間以内に返信", "カメラオフでOK", "まずは雑談だけでも歓迎"];
+const perks = [
+  "ITエキスパート学科",
+  "ゲーム学科でもWebに興味があるならOK",
+  "まずは雑談だけでも歓迎",
+];
 
 export function ContactSection() {
   return (
@@ -12,10 +16,10 @@ export function ContactSection() {
           Contact
         </div>
         <h3 className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-          まずは気軽にお話しましょう
+          興味のある学生はぜひ！！！
         </h3>
         <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-pretty">
-          「入会前に雰囲気を知りたい」「キャリアの悩みを整理したい」など、どんなテーマでもOK。短いメッセージで構いません。
+          We部は学内最大規模のテックコミュニティを目指しています。
         </p>
         <div className="mt-10 grid gap-3 text-left sm:grid-cols-3">
           {perks.map((perk) => (

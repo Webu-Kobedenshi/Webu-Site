@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, HelpCircle, Sparkles, X } from "lucide-react";
 
 const highlights = [
-  { title: "週1活動", description: "ゆるめの作業会＆おしゃべり会" },
+  { title: "週1活動", description: "全く雰囲気は硬くないので安心を" },
   {
     title: "初学者OK",
     description: "立ち上げメンバーも入学前まで何も知らなかった",

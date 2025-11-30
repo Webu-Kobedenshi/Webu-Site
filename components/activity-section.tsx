@@ -24,9 +24,9 @@ const activities = [
 ];
 
 const steps = [
-  "Slackに招待 & 自己紹介",
-  "気になる会にゆるっと参加",
-  "メンターと1on1で作戦会議",
+  "このコミュニティ気になるなあ〜",
+  "まずは話聞くぜ！",
+  "参加しよ!と決めるとSlackに参加",
 ];
 
 export function ActivitySection() {
