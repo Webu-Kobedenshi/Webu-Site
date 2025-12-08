@@ -38,7 +38,7 @@ export function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              申し込み・面談はこちらから
+              説明会申し込みはこちらから！
               <ExternalLink className="h-4 w-4" />
             </a>
           </Button>
