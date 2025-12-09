@@ -6,12 +6,18 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, HelpCircle, Sparkles, X } from "lucide-react";
 
 const highlights = [
-  { title: "週1活動", description: "全く雰囲気は硬くないので安心を" },
   {
-    title: "初学者OK",
-    description: "立ち上げメンバーも入学前まで何も知らなかった",
+    title: "優良企業に就職したい",
+    description: "実務経験を持っていると就活かなり強いです!",
   },
-  { title: "企業情報交流会", description: "どんなWeb企業があるか" },
+  {
+    title: "実務経験を積みたい",
+    description: "ちなみにアルバイトなので給料も出ます!",
+  },
+  {
+    title: "学生同士でもっと就活情報共有がしたい",
+    description: "内定者も在籍しているので聞いちゃいましょう!",
+  },
 ];
 
 const foundingRoles = [
@@ -112,9 +118,6 @@ export function HeroSection() {
           <span className="mt-1 inline-block bg-gradient-to-r from-primary via-pink-500 to-accent bg-clip-text text-transparent drop-shadow-sm">
             「We部」
           </span>
-          <span className="mt-3 block text-base font-medium text-muted-foreground">
-            〜立ち上げメンバーがwebしかわからないので〜
-          </span>
         </h1>
         <div className="mx-auto mt-6 flex w-full flex-col gap-4 text-left lg:flex-row lg:items-start lg:gap-8">
           <details className="flex-1 rounded-2xl border border-primary/20 bg-white/80 p-5 text-left shadow-sm [&_[data-content]]:mt-3">
@@ -183,18 +186,28 @@ export function HeroSection() {
             <a href="#activity">活動内容を見る</a>
           </Button>
         </div>
-        <div className="mt-14 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
-          {highlights.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-2xl border border-border/70 bg-white/80 p-5 text-left shadow-sm"
-            >
-              <p className="text-sm font-semibold text-primary">{item.title}</p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                {item.description}
-              </p>
-            </div>
-          ))}
+        <div className="mt-14">
+          <div className="text-left">
+            <p className="text-md font-semibold text-primary">
+              こんな学生にオススメ
+            </p>
+          </div>
+
+          <div className="mt-4 hidden gap-4 sm:grid sm:grid-cols-2 lg:grid-cols-3">
+            {highlights.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-border/70 bg-white/80 p-5 text-left shadow-sm"
+              >
+                <p className="text-sm font-semibold text-primary">
+                  {item.title}
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

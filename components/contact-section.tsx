@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, MessageSquareHeart } from "lucide-react";
 
-const perks = ["初学者歓迎！！", "Web系企業志望者向け", "学内最大規模にする！"];
+const perks = ["初学者歓迎！！", "Web系企業志望者向け", "実務経験積みましょう"];
 
 export function ContactSection() {
   return (

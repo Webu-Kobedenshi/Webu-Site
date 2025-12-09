@@ -39,7 +39,7 @@ export function Header() {
           size="sm"
           className="bg-primary/90 text-primary-foreground shadow-sm hover:bg-primary"
         >
-          <a href="#contact">話を聞きたい人はこちらから！</a>
+          <a href="#contact">説明会申し込みはこちらから！</a>
         </Button>
       </div>
     </header>
