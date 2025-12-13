@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   },
 };
 
+import { SmoothScroll } from "@/components/smooth-scroll";
+import { NoiseOverlay } from "@/components/noise-overlay";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,9 +40,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        {children}
+        <SmoothScroll>
+          <NoiseOverlay />
+          {children}
+        </SmoothScroll>
         <Analytics />
       </body>
     </html>
   );
 }
+
+

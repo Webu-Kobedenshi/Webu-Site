@@ -1,52 +1,71 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { ExternalLink, MessageSquareHeart } from "lucide-react";
+import { MessageSquareHeart, Send } from "lucide-react";
+import { motion } from "framer-motion";
+import { scaleIn } from "@/lib/animations";
 
 const perks = ["初学者歓迎！！", "Web系企業志望者向け", "実務経験積みましょう"];
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-24 px-6">
-      <div className="mx-auto max-w-3xl text-center">
-        <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1 text-sm font-medium text-secondary-foreground">
+    <section id="contact" className="py-32 px-6 relative isolate">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent to-primary/5" />
+
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={scaleIn}
+        className="mx-auto max-w-4xl text-center rounded-[3rem] bg-white/40 border border-white/60 p-12 shadow-2xl backdrop-blur-xl md:p-16"
+      >
+        <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-5 py-2 text-sm font-bold text-secondary-foreground mb-8">
           <MessageSquareHeart className="h-4 w-4" />
-          Contact
+          Join Us
         </div>
-        <h3 className="mt-4 text-3xl font-bold tracking-tight text-foreground md:text-4xl">
-          興味のある学生はぜひ！！！
+
+        <h3 className="text-4xl font-black tracking-tight text-foreground md:text-6xl mb-6">
+          興味のある学生は<br className="md:hidden" />ぜひ！！！
         </h3>
-        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-pretty">
-          We部は学内最大規模のテックコミュニティを目指しています。
+
+        <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty mb-10">
+          We部は学内最大規模のテックコミュニティを目指しています。<br />
+          一緒に成長できる仲間をお待ちしています。
         </p>
-        <div className="mt-10 grid gap-3 text-left sm:grid-cols-3">
+
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {perks.map((perk) => (
-            <div
+            <span
               key={perk}
-              className="rounded-2xl border border-primary/20 bg-white/90 px-4 py-3 text-sm font-medium text-primary"
+              className="px-4 py-2 rounded-xl bg-white/80 border border-primary/10 text-sm font-bold text-primary shadow-sm"
             >
               {perk}
-            </div>
+            </span>
           ))}
         </div>
-        <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+
+        <div className="flex flex-col items-center gap-6">
           <Button
             asChild
             size="lg"
-            className="w-full max-w-xs gap-2 bg-primary text-primary-foreground shadow-lg shadow-primary/30 hover:bg-primary/90"
+            className="w-full max-w-sm h-16 text-lg gap-3 bg-primary text-primary-foreground shadow-xl shadow-primary/30 hover:scale-105 hover:bg-primary hover:shadow-2xl transition-all duration-300 rounded-full"
           >
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSe7OkkLIouK8q6D9doWbvVApyKHpb9BIXULKz_I_i94VBfIsQ/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
             >
+              <Send className="h-5 w-5" />
               説明会申し込みはこちらから！
-              <ExternalLink className="h-4 w-4" />
             </a>
           </Button>
+
+          <p className="text-xs text-muted-foreground/80 font-medium bg-white/50 px-4 py-2 rounded-full">
+            ※参加費はかかりません。勧誘やゴリ押しは一切ありません。
+          </p>
         </div>
-        <p className="mt-6 text-sm text-muted-foreground">
-          ※参加費はかかりません。勧誘やゴリ押しは一切ありません。
-        </p>
-      </div>
+      </motion.div>
     </section>
   );
 }
+

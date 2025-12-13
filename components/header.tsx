@@ -1,47 +1,76 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
 
 export function Header() {
+  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    if (latest > previous && latest > 150) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
+
+    if (latest > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  });
+
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 border-border/60 bg-white/80 shadow-sm backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+    <motion.header
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${isScrolled
+          ? "border-b border-white/20 bg-white/70 shadow-sm backdrop-blur-xl supports-[backdrop-filter]:bg-white/60"
+          : "border-transparent bg-transparent"
+        }`}
+    >
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link
           href="/"
-          className="text-lg font-semibold tracking-tight text-foreground"
+          className="group flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-opacity hover:opacity-80"
         >
-          We部{" "}
-          <span className="text-sm font-normal text-muted-foreground">
+          <span className="text-xl">We部</span>
+          <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[0.65rem] font-bold uppercase tracking-wider text-primary">
             community
           </span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-muted-foreground md:flex">
-          <Link
-            href="#about"
-            className="transition-colors hover:text-foreground"
-          >
-            コミュニティ紹介
-          </Link>
-          <Link
-            href="#activity"
-            className="transition-colors hover:text-foreground"
-          >
-            活動プログラム
-          </Link>
-          <Link
-            href="#contact"
-            className="transition-colors hover:text-foreground"
-          >
-            お問い合わせ
-          </Link>
+        <nav className="hidden items-center gap-8 text-sm font-semibold text-muted-foreground md:flex">
+          {["About", "Activity", "Contact"].map((item) => (
+            <Link
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="relative transition-colors hover:text-primary"
+            >
+              {item === "About" ? "コミュニティ紹介" : item === "Activity" ? "活動プログラム" : "お問い合わせ"}
+            </Link>
+          ))}
         </nav>
-        <Button
-          asChild
-          size="sm"
-          className="bg-primary/90 text-primary-foreground shadow-sm hover:bg-primary"
-        >
-          <a href="#contact">説明会申し込みはこちらから！</a>
-        </Button>
+        <div className="flex items-center gap-4">
+          {/* Mobile Menu Trigger could go here */}
+          <Button
+            asChild
+            size="sm"
+            className="rounded-full bg-primary px-5 font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:bg-primary/90"
+          >
+            <a href="#contact">説明会申し込み</a>
+          </Button>
+        </div>
       </div>
-    </header>
+    </motion.header>
   );
 }
+
