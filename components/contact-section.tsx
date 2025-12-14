@@ -17,50 +17,50 @@ export function ContactSection() {
         whileInView="visible"
         viewport={{ once: true }}
         variants={scaleIn}
-        className="mx-auto max-w-4xl text-center rounded-[3rem] bg-white/40 border border-white/60 p-12 shadow-2xl backdrop-blur-xl md:p-16"
+        className="mx-auto max-w-4xl text-center rounded-[2rem] md:rounded-[3rem] bg-white/40 border border-white/60 p-6 md:p-16 shadow-2xl backdrop-blur-xl"
       >
-        <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-5 py-2 text-sm font-bold text-secondary-foreground mb-8">
-          <MessageSquareHeart className="h-4 w-4" />
+        <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 md:px-5 md:py-2 text-xs md:text-sm font-bold text-secondary-foreground mb-6 md:mb-8">
+          <MessageSquareHeart className="h-3 w-3 md:h-4 md:w-4" />
           Join Us
         </div>
 
-        <h3 className="text-4xl font-black tracking-tight text-foreground md:text-6xl mb-6">
+        <h3 className="text-3xl font-black tracking-tight text-foreground md:text-6xl mb-4 md:mb-6 leading-tight">
           興味のある学生は<br className="md:hidden" />ぜひ！！！
         </h3>
 
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty mb-10">
-          We部は学内最大規模のテックコミュニティを目指しています。<br />
+        <p className="mx-auto max-w-2xl text-base md:text-lg text-muted-foreground text-pretty mb-8 md:mb-10 leading-relaxed">
+          We部は学内最大規模のテックコミュニティを目指しています。<br className="hidden md:block" />
           一緒に成長できる仲間をお待ちしています。
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
           {perks.map((perk) => (
             <span
               key={perk}
-              className="px-4 py-2 rounded-xl bg-white/80 border border-primary/10 text-sm font-bold text-primary shadow-sm"
+              className="px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-white/80 border border-primary/10 text-xs md:text-sm font-bold text-primary shadow-sm"
             >
               {perk}
             </span>
           ))}
         </div>
 
-        <div className="flex flex-col items-center gap-6">
+        <div className="flex flex-col items-center gap-4 md:gap-6">
           <Button
             asChild
             size="lg"
-            className="w-full max-w-sm h-16 text-lg gap-3 bg-primary text-primary-foreground shadow-xl shadow-primary/30 hover:scale-105 hover:bg-primary hover:shadow-2xl transition-all duration-300 rounded-full"
+            className="w-full max-w-sm h-14 md:h-16 text-base md:text-lg gap-2 md:gap-3 bg-primary text-primary-foreground shadow-xl shadow-primary/30 hover:scale-105 hover:bg-primary hover:shadow-2xl transition-all duration-300 rounded-full"
           >
             <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSe7OkkLIouK8q6D9doWbvVApyKHpb9BIXULKz_I_i94VBfIsQ/viewform?usp=dialog"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Send className="h-5 w-5" />
+              <Send className="h-4 w-4 md:h-5 md:w-5" />
               説明会申し込みはこちらから！
             </a>
           </Button>
 
-          <p className="text-xs text-muted-foreground/80 font-medium bg-white/50 px-4 py-2 rounded-full">
+          <p className="text-[10px] md:text-xs text-muted-foreground/80 font-medium bg-white/50 px-3 py-1.5 md:px-4 md:py-2 rounded-full">
             ※参加費はかかりません。勧誘やゴリ押しは一切ありません。
           </p>
         </div>
