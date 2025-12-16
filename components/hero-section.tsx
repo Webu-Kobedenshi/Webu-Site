@@ -295,7 +295,7 @@ export function HeroSection() {
               </div>
               <div>
                 <p className="text-sm font-bold text-foreground leading-tight">合同会社DMM.com</p>
-                <p className="text-[10px] text-muted-foreground">Webフロント</p>
+                <p className="text-[10px] text-muted-foreground">Webエンジニア（フロントエンド）</p>
               </div>
             </div>
             <div className="flex items-center gap-4 rounded-2xl bg-white/60 p-3 shadow-sm border border-white/60">
@@ -304,7 +304,7 @@ export function HeroSection() {
               </div>
               <div>
                 <p className="text-sm font-bold text-foreground leading-tight">株式会社ぐるなび</p>
-                <p className="text-[10px] text-muted-foreground">Webバックエンド</p>
+                <p className="text-[10px] text-muted-foreground">【技術職】エンジニア</p>
               </div>
             </div>
             <div className="flex items-center gap-4 rounded-2xl bg-white/60 p-3 shadow-sm border border-white/60">
@@ -313,7 +313,7 @@ export function HeroSection() {
               </div>
               <div>
                 <p className="text-sm font-bold text-foreground leading-tight">株式会社オプティム</p>
-                <p className="text-[10px] text-muted-foreground">Webバックエンド</p>
+                <p className="text-[10px] text-muted-foreground">エンジニア職</p>
               </div>
             </div>
           </div>
