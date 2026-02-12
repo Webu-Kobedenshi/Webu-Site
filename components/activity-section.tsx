@@ -9,7 +9,7 @@ const activities = [
     id: "01",
     title: "チーム開発",
     subtitle: "Practical Development",
-    description: "1年間を通して実際にサービスをリリース。企画から設計、開発、運用までここで体験しよう!",
+    description: "3ヶ月の開発サイクルを行いリリース。企画から設計、開発、運用までここで体験しよう!",
     detail: "技術選定や開発の進め方などはどんどん先輩や強強エンジニアに聞いていこう！！",
     tag: "週1 / OPTiM Club KOBE",
     icon: <Rocket className="h-10 w-10 md:h-12 md:w-12 text-orange-500" />,
