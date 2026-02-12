@@ -85,7 +85,7 @@ export function HeroSection() {
     <section
       id="about"
       ref={containerRef}
-      className="relative min-h-[100vh] overflow-hidden pt-24 pb-16 md:pt-32 md:pb-20 flex flex-col items-center"
+      className="relative min-h-[100vh] overflow-hidden pt-20 pb-12 sm:pt-24 sm:pb-16 md:pt-32 md:pb-20 flex flex-col items-center"
     >
       {/* Kinetic Background Text */}
       <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 -z-10 pointer-events-none select-none mix-blend-multiply opacity-50">
@@ -105,7 +105,7 @@ export function HeroSection() {
         variants={staggerContainer}
         initial="hidden"
         animate="visible"
-        className="mx-auto w-full max-w-7xl px-4 md:px-6 text-center relative z-10 flex flex-col items-center justify-center min-h-[50vh] md:min-h-[60vh]"
+        className="mx-auto w-full max-w-7xl px-4 md:px-6 text-center relative z-10 flex flex-col items-center justify-center min-h-[45vh] sm:min-h-[50vh] md:min-h-[60vh]"
       >
         <motion.div variants={fadeInUp} className="flex justify-center mb-6 md:mb-8">
           {/* Badge code identical to before */}
@@ -185,7 +185,7 @@ export function HeroSection() {
         </AnimatePresence>
 
         <div className="mx-auto max-w-5xl relative">
-          <motion.h1 className="text-balance text-5xl sm:text-7xl md:text-8xl font-black leading-[1.0] sm:leading-[0.9] tracking-tighter text-foreground">
+          <motion.h1 className="text-balance text-[2.5rem] sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] sm:leading-[1.0] md:leading-[0.9] tracking-tighter text-foreground">
             <span className="block overflow-hidden pb-2 md:pb-4">
               <motion.span variants={reveal} className="block">
                 Web系企業の就活
@@ -214,14 +214,14 @@ export function HeroSection() {
           <span className="text-foreground font-bold">本気の就活対策</span>と<span className="text-foreground font-bold">技術共有</span>。
         </motion.p>
 
-        <motion.div variants={fadeInUp} className="mt-10 md:mt-12 flex flex-col items-center justify-center gap-4 w-full px-8 sm:w-auto sm:px-0 sm:flex-row">
+        <motion.div variants={fadeInUp} className="mt-8 sm:mt-10 md:mt-12 flex flex-col items-center justify-center gap-3 sm:gap-4 w-full px-6 sm:w-auto sm:px-0 sm:flex-row">
           <Button
             asChild
             size="lg"
-            className="w-full sm:w-auto rounded-full bg-primary px-8 py-6 md:px-10 md:py-7 text-lg md:text-xl font-bold text-white shadow-xl shadow-primary/20 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/30 h-auto"
+            className="w-full sm:w-auto rounded-full bg-primary px-6 py-4 sm:px-8 sm:py-6 md:px-10 md:py-7 text-base sm:text-lg md:text-xl font-bold text-white shadow-xl shadow-primary/20 transition-all hover:scale-105 hover:shadow-2xl hover:shadow-primary/30 h-auto"
           >
             <a href="#contact">
-              説明会申し込み
+              参加希望者はこちらから
               <ArrowRight className="ml-2 h-5 w-5 md:h-6 md:w-6" />
             </a>
           </Button>
@@ -229,7 +229,7 @@ export function HeroSection() {
             asChild
             variant="ghost"
             size="lg"
-            className="w-full sm:w-auto group rounded-full px-8 py-6 md:px-8 md:py-7 text-lg md:text-xl font-medium text-foreground transition-all hover:bg-white/50 h-auto"
+            className="w-full sm:w-auto group rounded-full px-6 py-4 sm:px-8 sm:py-6 md:px-8 md:py-7 text-base sm:text-lg md:text-xl font-medium text-foreground transition-all hover:bg-white/50 h-auto"
           >
             <a href="#activity">
               活動内容を見る
@@ -238,82 +238,112 @@ export function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Bento Grid - moved down slightly */}
+      {/* Bento Grid */}
       <motion.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="mt-16 md:mt-32 grid grid-cols-1 gap-6 md:gap-4 md:grid-cols-3 md:grid-rows-2 max-w-6xl mx-auto px-4 w-full relative z-10"
+        className="mt-12 sm:mt-16 md:mt-32 flex flex-col gap-4 sm:gap-6 md:gap-4 max-w-6xl mx-auto px-4 w-full relative z-10"
       >
-        {/* Why We部? - Large Card */}
-        <motion.div variants={scaleIn} className="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] border border-white/40 bg-white/40 p-6 md:p-8 text-left shadow-sm backdrop-blur-md transition-all hover:bg-white/60 hover:shadow-lg group flex flex-col">
-          <div className="absolute top-0 right-0 p-6 md:p-8 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-700">
-            <HelpCircle className="h-32 w-32 md:h-48 md:w-48 text-primary" />
-          </div>
-          <h1 className="relative z-10 text-xl md:text-3xl font-bold text-foreground mb-3 md:mb-4">なぜWe部を？</h1>
-          <p className="relative z-10 text-base md:text-lg leading-relaxed text-muted-foreground">
-            就活のコツは神戸電子の後輩にぜんぶ共有したい——そんな思いでWe部が生まれました。<br className="hidden md:block" /><br className="hidden md:block" />
-            <span className="font-bold text-foreground bg-primary/10 px-1 py-0.5 rounded inline-block md:inline mt-2 md:mt-0 mb-2 md:mb-0">「Web系企業の就活を目指す学生同士で武器を作り情報を共有」</span>
-            し、優良企業合格者を増やしたい。そのために私たちが経験した全てを還元します。
-          </p>
-          <div className="mt-6 flex flex-wrap gap-2 md:gap-3 relative z-10">
-            {highlights.map((item, i) => (
-              <div key={i} className="flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-bold text-foreground shadow-sm border border-primary/5 hover:scale-105 transition-transform">
-                {item.icon}
-                {item.title}
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        {/* Top Row: なぜWebを？ + 立ち上げメンバー実務先 */}
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 md:gap-4">
+          {/* Why We部? Card */}
+          <motion.div variants={scaleIn} className="md:col-span-3 relative overflow-hidden rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] border border-white/40 bg-white/40 p-5 sm:p-6 md:p-8 text-left shadow-sm backdrop-blur-md transition-all hover:bg-white/60 hover:shadow-lg group flex flex-col">
+            <div className="absolute top-0 right-0 p-6 md:p-8 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-700">
+              <HelpCircle className="h-32 w-32 md:h-40 md:w-40 text-primary" />
+            </div>
+            <h1 className="relative z-10 text-xl md:text-2xl font-bold text-foreground mb-3 md:mb-4">なぜWebを？</h1>
+            <p className="relative z-10 text-sm md:text-base leading-relaxed text-muted-foreground">
+              就活のコツは神戸電子の後輩にぜんぶ共有したい——そんな思いでWe部が生まれました。<br className="hidden md:block" /><br className="hidden md:block" />
+              <span className="font-bold text-foreground bg-primary/10 px-1 py-0.5 rounded inline-block md:inline mt-2 md:mt-0 mb-2 md:mb-0">「Web系企業の就活を目指す学生同士で武器を作り情報を共有」</span>
+              し、優良企業合格者を増やしたい。そのために私たちが経験した全てを還元します。
+            </p>
+            <div className="mt-auto pt-5 flex flex-wrap gap-2 md:gap-3 relative z-10">
+              {highlights.map((item, i) => (
+                <div key={i} className="flex items-center gap-2 rounded-full bg-white/80 px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-bold text-foreground shadow-sm border border-primary/5 hover:scale-105 transition-transform">
+                  {item.icon}
+                  {item.title}
+                </div>
+              ))}
+            </div>
+          </motion.div>
 
-        {/* Founding Members - Medium Card */}
-        <motion.div variants={scaleIn} className="md:col-span-1 md:row-span-1 rounded-[2rem] md:rounded-[2.5rem] border border-white/40 bg-gradient-to-br from-primary/5 to-primary/10 p-6 md:p-8 shadow-sm backdrop-blur-md group hover:shadow-lg transition-all">
-          <h4 className="flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-wider text-primary mb-3 md:mb-4">
-            <Sparkles className="h-4 w-4" />
-            立ち上げメンバーの実務先
-          </h4>
-          <div className="space-y-2 md:space-y-3">
-            {foundingRoles.map((role, i) => (
-              <div key={i} className="text-xs md:text-sm font-bold text-foreground/80 bg-white/50 rounded-xl px-3 py-2.5 md:px-4 md:py-3 border border-white/40 group-hover:bg-white/80 transition-colors">
-                {role}
-              </div>
-            ))}
-          </div>
-        </motion.div>
+          {/* Founding Members Card */}
+          <motion.div variants={scaleIn} className="md:col-span-2 rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] border border-white/40 bg-gradient-to-br from-primary/5 to-primary/10 p-5 sm:p-6 md:p-8 shadow-sm backdrop-blur-md group hover:shadow-lg transition-all flex flex-col">
+            <h4 className="flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-wider text-primary mb-3 md:mb-4">
+              <Sparkles className="h-4 w-4" />
+              立ち上げメンバーの実務先
+            </h4>
+            <div className="space-y-2 md:space-y-3 flex-1 flex flex-col justify-center">
+              {foundingRoles.map((role, i) => (
+                <div key={i} className="text-xs md:text-sm font-bold text-foreground/80 bg-white/50 rounded-xl px-3 py-2.5 md:px-4 md:py-3 border border-white/40 group-hover:bg-white/80 transition-colors">
+                  {role}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
 
-        {/* Offer - Medium Card */}
-        <motion.div variants={scaleIn} className="md:col-span-1 md:row-span-1 rounded-[2rem] md:rounded-[2.5rem] border border-white/40 bg-gradient-to-br from-accent/10 to-accent/20 p-6 md:p-8 shadow-sm backdrop-blur-md hover:shadow-lg transition-all">
-          <h4 className="flex items-center gap-2 text-xs md:text-sm font-bold uppercase tracking-wider text-accent-foreground mb-3 md:mb-4">
-            <CheckCircle2 className="h-4 w-4" />
+        {/* Bottom Row: 内定先 - Full Width Large Card */}
+        <motion.div variants={scaleIn} className="rounded-2xl sm:rounded-[2rem] md:rounded-[2.5rem] border border-white/40 bg-gradient-to-br from-accent/5 via-white/40 to-accent/10 p-5 sm:p-6 md:p-10 shadow-sm backdrop-blur-md hover:shadow-lg transition-all">
+          <h4 className="flex items-center gap-2 text-xs sm:text-sm md:text-base font-bold uppercase tracking-wider text-accent-foreground mb-4 sm:mb-5 md:mb-8">
+            <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5" />
             メンバーの内定先
           </h4>
-          <div className="space-y-3">
-            <div className="flex items-center gap-4 rounded-2xl bg-white/60 p-3 shadow-sm border border-white/60">
-              <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-[#2C2C2C] text-white font-bold text-[10px] leading-none tracking-tighter shrink-0 pt-0.5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl bg-white/60 p-3 sm:p-4 md:p-5 shadow-sm border border-white/60 hover:bg-white/80 hover:shadow-md transition-all">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#2C2C2C] text-white font-bold text-[10px] sm:text-xs md:text-sm leading-none tracking-tighter shrink-0">
                 DMM
               </div>
-              <div>
-                <p className="text-sm font-bold text-foreground leading-tight">合同会社DMM.com</p>
-                <p className="text-[10px] text-muted-foreground">Webエンジニア（フロントエンド）</p>
+              <div className="text-center sm:text-left">
+                <p className="text-xs sm:text-sm md:text-base font-bold text-foreground leading-tight">合同会社DMM.com</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-0.5 hidden sm:block">Webエンジニア（フロントエンド）</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 rounded-2xl bg-white/60 p-3 shadow-sm border border-white/60">
-              <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-[#E60012] text-white font-bold text-[8px] leading-none tracking-tighter shrink-0 pt-0.5">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl bg-white/60 p-3 sm:p-4 md:p-5 shadow-sm border border-white/60 hover:bg-white/80 hover:shadow-md transition-all">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#E60012] text-white font-bold text-[8px] sm:text-[9px] md:text-[10px] leading-none tracking-tighter shrink-0">
                 ぐるなび
               </div>
-              <div>
-                <p className="text-sm font-bold text-foreground leading-tight">株式会社ぐるなび</p>
-                <p className="text-[10px] text-muted-foreground">【技術職】エンジニア</p>
+              <div className="text-center sm:text-left">
+                <p className="text-xs sm:text-sm md:text-base font-bold text-foreground leading-tight">株式会社ぐるなび</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-0.5 hidden sm:block">【技術職】エンジニア</p>
               </div>
             </div>
-            <div className="flex items-center gap-4 rounded-2xl bg-white/60 p-3 shadow-sm border border-white/60">
-              <div className="h-10 w-10 flex items-center justify-center rounded-xl bg-[#004481] text-white font-bold text-[8px] leading-none tracking-tighter shrink-0 pt-0.5">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl bg-white/60 p-3 sm:p-4 md:p-5 shadow-sm border border-white/60 hover:bg-white/80 hover:shadow-md transition-all">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#004481] text-white font-bold text-[8px] sm:text-[9px] md:text-[10px] leading-none tracking-tighter shrink-0">
                 OPTiM
               </div>
-              <div>
-                <p className="text-sm font-bold text-foreground leading-tight">株式会社オプティム</p>
-                <p className="text-[10px] text-muted-foreground">エンジニア職</p>
+              <div className="text-center sm:text-left">
+                <p className="text-xs sm:text-sm md:text-base font-bold text-foreground leading-tight">株式会社オプティム</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-0.5 hidden sm:block">エンジニア職</p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl bg-white/60 p-3 sm:p-4 md:p-5 shadow-sm border border-white/60 hover:bg-white/80 hover:shadow-md transition-all">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#1A1A2E] text-white font-bold text-[8px] sm:text-[9px] md:text-[10px] leading-none tracking-tighter shrink-0">
+                Speee
+              </div>
+              <div className="text-center sm:text-left">
+                <p className="text-xs sm:text-sm md:text-base font-bold text-foreground leading-tight">株式会社Speee</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-0.5 hidden sm:block">エンジニア職</p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl bg-white/60 p-3 sm:p-4 md:p-5 shadow-sm border border-white/60 hover:bg-white/80 hover:shadow-md transition-all">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#FF6B35] text-white font-bold text-[8px] sm:text-[9px] md:text-[10px] leading-none tracking-tighter shrink-0">
+                クラシル
+              </div>
+              <div className="text-center sm:text-left">
+                <p className="text-xs sm:text-sm md:text-base font-bold text-foreground leading-tight">dely株式会社</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-0.5 hidden sm:block">エンジニア職</p>
+              </div>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 rounded-xl sm:rounded-2xl bg-white/60 p-3 sm:p-4 md:p-5 shadow-sm border border-white/60 hover:bg-white/80 hover:shadow-md transition-all">
+              <div className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center rounded-lg sm:rounded-xl bg-[#000000] text-white font-bold text-[10px] sm:text-xs md:text-sm leading-none tracking-tighter shrink-0">
+                ZOZO
+              </div>
+              <div className="text-center sm:text-left">
+                <p className="text-xs sm:text-sm md:text-base font-bold text-foreground leading-tight">株式会社ZOZO</p>
+                <p className="text-[10px] sm:text-xs md:text-sm text-muted-foreground mt-0.5 hidden sm:block">エンジニア職</p>
               </div>
             </div>
           </div>

@@ -34,11 +34,11 @@ export function Header() {
       animate={hidden ? "hidden" : "visible"}
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300 ${isScrolled
-          ? "border-b border-white/20 bg-white/70 shadow-sm backdrop-blur-xl supports-[backdrop-filter]:bg-white/60"
-          : "border-transparent bg-transparent"
+        ? "border-b border-white/20 bg-white/70 shadow-sm backdrop-blur-xl supports-[backdrop-filter]:bg-white/60"
+        : "border-transparent bg-transparent"
         }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+      <div className="mx-auto flex h-14 sm:h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <Link
           href="/"
           className="group flex items-center gap-2 text-lg font-bold tracking-tight text-foreground transition-opacity hover:opacity-80"
@@ -64,9 +64,12 @@ export function Header() {
           <Button
             asChild
             size="sm"
-            className="rounded-full bg-primary px-5 font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:bg-primary/90"
+            className="rounded-full bg-primary px-4 sm:px-5 text-xs sm:text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:scale-105 hover:bg-primary/90"
           >
-            <a href="#contact">説明会申し込み</a>
+            <a href="#contact">
+              <span className="sm:hidden">参加する</span>
+              <span className="hidden sm:inline">参加希望者はこちらから</span>
+            </a>
           </Button>
         </div>
       </div>
