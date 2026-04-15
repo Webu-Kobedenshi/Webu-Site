@@ -1,7 +1,21 @@
 "use client";
 
-import { motion, useScroll, useTransform, useMotionTemplate, useMotionValue } from "framer-motion";
-import { ExternalLink, Calendar, Trophy, Users, Rocket } from "lucide-react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionTemplate,
+  useMotionValue,
+} from "framer-motion";
+import {
+  ExternalLink,
+  Calendar,
+  Trophy,
+  Users,
+  Rocket,
+  BookOpen,
+  Sparkles,
+} from "lucide-react";
 import { useRef, MouseEvent } from "react";
 
 const activities = [
@@ -9,8 +23,10 @@ const activities = [
     id: "01",
     title: "チーム開発",
     subtitle: "Practical Development",
-    description: "3ヶ月の開発サイクルを行いリリース。企画から設計、開発、運用までここで体験しよう!",
-    detail: "技術選定や開発の進め方などはどんどん先輩や強強エンジニアに聞いていこう！！",
+    description:
+      "約2ヶ月の開発サイクルを行いリリース。企画から設計、開発、運用までここで体験しよう!",
+    detail:
+      "技術選定や開発の進め方などはどんどん先輩や強強エンジニアに聞いていこう！！",
     tag: "週1 / OPTiM Club KOBE",
     icon: <Rocket className="h-10 w-10 md:h-12 md:w-12 text-orange-500" />,
     gradient: "from-orange-500/20 to-orange-600/5",
@@ -21,8 +37,10 @@ const activities = [
     id: "02",
     title: "ハッカソン出場",
     subtitle: "Hackathon Challenge",
-    description: "チームで外部のハッカソンに参加し、実践的な開発経験を積みます。",
-    detail: "外部ハッカソンで受賞すれば就職活動の実績として超強力な武器になります。",
+    description:
+      "チームで外部のハッカソンに参加し、実践的な開発経験を積みます。",
+    detail:
+      "外部ハッカソンで受賞すれば就職活動の実績として超強力な武器になります。",
     tag: "年に1度 / 任意",
     linkLabel: "技育展 2025 (例)",
     linkUrl: "https://geek.supporterz.jp/geekten/2025",
@@ -35,7 +53,8 @@ const activities = [
     id: "03",
     title: "情報共有ラフ会",
     subtitle: "Knowledge Share",
-    description: "就活の情報や企業研究、技術トークや面接対策などをメンバー同士で共有します。",
+    description:
+      "就活の情報や企業研究、技術トークや面接対策などをメンバー同士で共有します。",
     detail: "有料企業や大手の情報はなかなか学校では手に入りません！",
     tag: "月1 / ハイブリッド",
     icon: <Users className="h-10 w-10 md:h-12 md:w-12 text-blue-500" />,
@@ -47,7 +66,8 @@ const activities = [
     id: "04",
     title: "OBOGコミュニティ",
     subtitle: "Alumni Network",
-    description: "卒業後もつながり続け、インターンや企業情報を後輩に還元できる仕組みを整備予定。",
+    description:
+      "卒業後もつながり続け、インターンや企業情報を後輩に還元できる仕組みを整備予定。",
     detail: "Coming Soon...",
     tag: "Coming Soon",
     icon: <Calendar className="h-10 w-10 md:h-12 md:w-12 text-gray-500" />,
@@ -57,12 +77,43 @@ const activities = [
   },
 ];
 
+const resources = [
+  {
+    id: "kb",
+    title: "ナレッジベース",
+    subtitle: "Knowledge Base",
+    description:
+      "We部についてより詳しく知りたい方向けに、活動内容やスケジュールが確認できます。",
+    linkLabel: "ナレッジベースを見る",
+    url: "https://webu-kobedenshi.github.io/web-community-vault/We%E9%83%A8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
+    icon: <BookOpen className="h-8 w-8 md:h-9 md:w-9 text-emerald-600" />,
+    border: "border-emerald-500/30",
+    gradient: "from-emerald-500/20 to-emerald-600/5",
+  },
+  {
+    id: "ai",
+    title: "コミュニティ専用AI",
+    subtitle: "Community AI",
+    description:
+      "コミュニティ専属AI。[参加費かかるの？]などの細かいことも聞けちゃいます。",
+    linkLabel: "専用AIに相談する",
+    url: "https://notebooklm.google.com/notebook/54975bed-ea17-4aae-a9d3-18515bf650c2",
+    icon: <Sparkles className="h-8 w-8 md:h-9 md:w-9 text-cyan-600" />,
+    border: "border-cyan-500/30",
+    gradient: "from-cyan-500/20 to-cyan-600/5",
+  },
+];
+
 function OptimSpecialCard() {
   const cardRef = useRef<HTMLDivElement>(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  const handleMouseMove = ({ currentTarget, clientX, clientY }: MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = ({
+    currentTarget,
+    clientX,
+    clientY,
+  }: MouseEvent<HTMLDivElement>) => {
     const { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
@@ -119,24 +170,37 @@ function OptimSpecialCard() {
                   <span className="text-4xl md:text-6xl font-black text-[#004481] tracking-tighter flex items-center gap-1">
                     OPTiM
                   </span>
-                  <span className="absolute top-6 right-6 md:top-8.5 md:right-8 text-sm md:text-[20px] font-bold text-[#004481] opacity-60">®</span>
+                  <span className="absolute top-6 right-6 md:top-8.5 md:right-8 text-sm md:text-[20px] font-bold text-[#004481] opacity-60">
+                    ®
+                  </span>
                 </div>
               </div>
 
-              <div className="mt-6 md:mt-8 flex flex-col items-center lg:items-start space-y-3">
-              </div>
+              <div className="mt-6 md:mt-8 flex flex-col items-center lg:items-start space-y-3"></div>
             </div>
 
             {/* Right: Vision & Message */}
             <div className="w-full lg:w-2/3 text-center lg:text-left space-y-6 md:space-y-8">
               <div className="space-y-3 md:space-y-4">
                 <h3 className="text-3xl md:text-5xl font-black text-slate-900 leading-[1.1] tracking-tight">
-                  <span className="block text-xl md:text-3xl text-slate-500 font-bold mb-1 md:mb-2 tracking-normal">Mission</span>
-                  ネットを<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004481] to-blue-600">空気に変える</span>
+                  <span className="block text-xl md:text-3xl text-slate-500 font-bold mb-1 md:mb-2 tracking-normal">
+                    Mission
+                  </span>
+                  ネットを
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#004481] to-blue-600">
+                    空気に変える
+                  </span>
                 </h3>
                 <p className="text-base md:text-xl font-medium text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  We部の活動拠点は、東証プライム上場企業<span className="text-[#004481] font-bold">株式会社オプティム</span>様より、
-                  未来のエンジニアへの投資として<span className="underline decoration-[#004481]/30 decoration-4 underline-offset-4">無償提供</span>いただいています。
+                  We部の活動拠点は、東証プライム上場企業
+                  <span className="text-[#004481] font-bold">
+                    株式会社オプティム
+                  </span>
+                  様より、 未来のエンジニアへの投資として
+                  <span className="underline decoration-[#004481]/30 decoration-4 underline-offset-4">
+                    無償提供
+                  </span>
+                  いただいています。
                 </p>
               </div>
 
@@ -154,7 +218,6 @@ function OptimSpecialCard() {
                   </span>
                 </a>
               </div>
-
             </div>
           </div>
         </div>
@@ -173,9 +236,16 @@ export function ActivitySection() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section id="activity" ref={containerRef} className="relative py-16 md:py-32 bg-slate-50 overflow-hidden">
+    <section
+      id="activity"
+      ref={containerRef}
+      className="relative py-16 md:py-32 bg-slate-50 overflow-hidden"
+    >
       {/* Background Title */}
-      <motion.div style={{ y }} className="absolute top-12 left-0 right-0 pointer-events-none select-none overflow-hidden opacity-50">
+      <motion.div
+        style={{ y }}
+        className="absolute top-12 left-0 right-0 pointer-events-none select-none overflow-hidden opacity-50"
+      >
         <span className="block text-[20vw] font-black leading-none text-foreground/[0.03] tracking-tighter text-center">
           ACTIVITIES
         </span>
@@ -198,7 +268,8 @@ export function ActivitySection() {
             Our Program
           </p>
           <p className="mt-6 md:mt-8 text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            週に一度の定例会をはじめ、ハッカソンや就活対策など<br className="hidden md:block" />
+            週に一度の定例会をはじめ、ハッカソンや就活対策など
+            <br className="hidden md:block" />
             エンジニアとして自走するための環境を本気で用意しています。
           </p>
         </motion.div>
@@ -215,12 +286,16 @@ export function ActivitySection() {
               className={`group relative overflow-hidden rounded-[2rem] border-2 bg-white ${activity.border} p-6 md:p-10 flex flex-col transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:bg-white`}
             >
               {/* Ambient Glow */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${activity.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${activity.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500`}
+              />
 
               {/* Card Header */}
               <div className="relative z-10 flex items-start justify-between mb-6 md:mb-8">
                 <div className="flex items-center gap-4 md:gap-5">
-                  <div className={`p-3 md:p-4 rounded-2xl bg-slate-50 shadow-inner group-hover:scale-110 transition-transform duration-300`}>
+                  <div
+                    className={`p-3 md:p-4 rounded-2xl bg-slate-50 shadow-inner group-hover:scale-110 transition-transform duration-300`}
+                  >
                     {activity.icon}
                   </div>
                   <div>
@@ -243,7 +318,9 @@ export function ActivitySection() {
               </p>
 
               {/* Detail Quote */}
-              <div className={`relative z-10 pl-4 border-l-4 ${activity.border} py-1 mb-6 md:mb-8`}>
+              <div
+                className={`relative z-10 pl-4 border-l-4 ${activity.border} py-1 mb-6 md:mb-8`}
+              >
                 <p className="text-xs md:text-sm text-slate-500 italic">
                   {activity.detail}
                 </p>
@@ -262,7 +339,9 @@ export function ActivitySection() {
                     rel="noopener noreferrer"
                     className="group/btn flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors"
                   >
-                    <span className="underline decoration-2 underline-offset-4">Check Detail</span>
+                    <span className="underline decoration-2 underline-offset-4">
+                      Check Detail
+                    </span>
                     <ExternalLink className="h-4 w-4 transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
                   </a>
                 )}
@@ -271,9 +350,77 @@ export function ActivitySection() {
           ))}
         </div>
 
+        {/* Resource Links */}
+        <div className="max-w-5xl mx-auto mt-12 md:mt-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-6 md:mb-10"
+          >
+            <p className="text-xs md:text-sm font-bold tracking-[0.2em] text-primary uppercase mb-3">
+              Resources
+            </p>
+            <h3 className="text-2xl md:text-4xl font-black text-slate-900 leading-tight">
+              コミュニティをもっと知りたい
+            </h3>
+            <p className="mt-3 text-sm md:text-base text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              活動をもっと深く知っていただくために、ナレッジベースと専属AIを用意しています。
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {resources.map((resource, index) => (
+              <motion.article
+                key={resource.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.08, duration: 0.45 }}
+                className={`group relative overflow-hidden rounded-[1.8rem] border-2 bg-white ${resource.border} p-6 md:p-7 shadow-sm hover:shadow-xl transition-all duration-500`}
+              >
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${resource.gradient} opacity-0 group-hover:opacity-15 transition-opacity duration-500`}
+                />
+
+                <div className="relative z-10 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="text-[10px] md:text-xs font-bold tracking-widest uppercase text-slate-400 mb-2">
+                      {resource.subtitle}
+                    </p>
+                    <h4 className="text-xl md:text-2xl font-bold text-slate-900 leading-tight">
+                      {resource.title}
+                    </h4>
+                  </div>
+                  <div className="p-3 rounded-2xl bg-slate-50 shadow-inner">
+                    {resource.icon}
+                  </div>
+                </div>
+
+                <p className="relative z-10 mt-4 text-sm md:text-base text-slate-600 leading-relaxed min-h-[4.2rem] md:min-h-[5rem]">
+                  {resource.description}
+                </p>
+
+                <a
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${resource.title}を新しいタブで開く`}
+                  className="relative z-10 mt-5 inline-flex items-center gap-2 text-sm md:text-base font-bold text-primary hover:text-primary/80 transition-colors"
+                >
+                  <span className="underline decoration-2 underline-offset-4">
+                    {resource.linkLabel}
+                  </span>
+                  <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </a>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+
         {/* OPTiM Special Section */}
         <OptimSpecialCard />
-
       </div>
     </section>
   );
