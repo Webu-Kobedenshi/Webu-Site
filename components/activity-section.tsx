@@ -9,10 +9,10 @@ import {
 } from "framer-motion";
 import {
   ExternalLink,
-  Calendar,
   Trophy,
   Users,
   Rocket,
+  Briefcase,
   BookOpen,
   Sparkles,
 } from "lucide-react";
@@ -24,9 +24,9 @@ const activities = [
     title: "チーム開発",
     subtitle: "Practical Development",
     description:
-      "約2ヶ月の開発サイクルを行いリリース。企画から設計、開発、運用までここで体験しよう!",
+      "約2ヶ月の開発サイクルで企画からリリースまでを実践。\n設計・開発・運用まで一連の流れをここで体験しよう!",
     detail:
-      "技術選定や開発の進め方などはどんどん先輩や強強エンジニアに聞いていこう！！",
+      "技術選定や開発の進め方は、\n先輩や強強エンジニアにどんどん聞いていこう！！",
     tag: "週1 / OPTiM Club KOBE",
     icon: <Rocket className="h-10 w-10 md:h-12 md:w-12 text-orange-500" />,
     gradient: "from-orange-500/20 to-orange-600/5",
@@ -54,8 +54,8 @@ const activities = [
     title: "情報共有ラフ会",
     subtitle: "Knowledge Share",
     description:
-      "就活の情報や企業研究、技術トークや面接対策などをメンバー同士で共有します。",
-    detail: "有料企業や大手の情報はなかなか学校では手に入りません！",
+      "就活情報や企業研究、技術トーク、面接対策まで\nメンバー同士で実体験ベースに共有します。",
+    detail: "有料企業や大手の情報は、\n学校だけではなかなか手に入りません！",
     tag: "月1 / ハイブリッド",
     icon: <Users className="h-10 w-10 md:h-12 md:w-12 text-blue-500" />,
     gradient: "from-blue-500/20 to-blue-600/5",
@@ -64,16 +64,19 @@ const activities = [
   },
   {
     id: "04",
-    title: "OBOGコミュニティ",
-    subtitle: "Alumni Network",
+    title: "先輩の就活知見",
+    subtitle: "Career Knowledge Base",
     description:
-      "卒業後もつながり続け、インターンや企業情報を後輩に還元できる仕組みを整備予定。",
-    detail: "Coming Soon...",
-    tag: "Coming Soon",
-    icon: <Calendar className="h-10 w-10 md:h-12 md:w-12 text-gray-500" />,
-    gradient: "from-gray-500/20 to-gray-600/5",
-    border: "border-gray-500/30",
-    accent: "bg-gray-500",
+      "先輩がどんな企業に内定をもらい、\nどんなスキルやガクチカを活かしたのかを生の声を集めています。",
+    detail:
+      "就活でやるべきことを先輩の実例から学び、\n次の一歩を具体化できます。",
+    tag: "随時更新 / OBOG体験記",
+    linkLabel: "先輩の就活知見を読む",
+    linkUrl: "https://webu-portal-web.vercel.app/",
+    icon: <Briefcase className="h-10 w-10 md:h-12 md:w-12 text-emerald-600" />,
+    gradient: "from-emerald-500/20 to-emerald-600/5",
+    border: "border-emerald-500/30",
+    accent: "bg-emerald-500",
   },
 ];
 
@@ -83,7 +86,7 @@ const resources = [
     title: "ナレッジベース",
     subtitle: "Knowledge Base",
     description:
-      "We部についてより詳しく知りたい方向けに、活動内容やスケジュールが確認できます。",
+      "We部をより詳しく知りたい方向けに、\n活動内容やスケジュールを確認できます。",
     linkLabel: "ナレッジベースを見る",
     url: "https://webu-kobedenshi.github.io/web-community-vault/We%E9%83%A8%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6/",
     icon: <BookOpen className="h-8 w-8 md:h-9 md:w-9 text-emerald-600" />,
@@ -95,7 +98,7 @@ const resources = [
     title: "コミュニティ専用AI",
     subtitle: "Community AI",
     description:
-      "コミュニティ専属AI。[参加費かかるの？]などの細かいことも聞けちゃいます。",
+      "コミュニティ専属AIです。\n「参加費はかかるの？」など細かな疑問も気軽に聞けます。",
     linkLabel: "専用AIに相談する",
     url: "https://notebooklm.google.com/notebook/54975bed-ea17-4aae-a9d3-18515bf650c2",
     icon: <Sparkles className="h-8 w-8 md:h-9 md:w-9 text-cyan-600" />,
@@ -313,7 +316,7 @@ export function ActivitySection() {
               </div>
 
               {/* Description */}
-              <p className="relative z-10 text-sm md:text-base text-slate-600 leading-relaxed mb-6 md:mb-8 flex-grow font-medium">
+              <p className="relative z-10 text-sm md:text-base text-slate-600 leading-relaxed mb-6 md:mb-8 flex-grow font-medium md:whitespace-pre-line">
                 {activity.description}
               </p>
 
@@ -321,7 +324,7 @@ export function ActivitySection() {
               <div
                 className={`relative z-10 pl-4 border-l-4 ${activity.border} py-1 mb-6 md:mb-8`}
               >
-                <p className="text-xs md:text-sm text-slate-500 italic">
+                <p className="text-xs md:text-sm text-slate-500 italic md:whitespace-pre-line">
                   {activity.detail}
                 </p>
               </div>
@@ -337,10 +340,11 @@ export function ActivitySection() {
                     href={activity.linkUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`${activity.title}を新しいタブで開く`}
                     className="group/btn flex items-center gap-2 text-sm font-bold text-primary hover:text-primary/80 transition-colors"
                   >
                     <span className="underline decoration-2 underline-offset-4">
-                      Check Detail
+                      {activity.linkLabel ?? "Check Detail"}
                     </span>
                     <ExternalLink className="h-4 w-4 transition-transform group-hover/btn:-translate-y-1 group-hover/btn:translate-x-1" />
                   </a>
@@ -398,7 +402,7 @@ export function ActivitySection() {
                   </div>
                 </div>
 
-                <p className="relative z-10 mt-4 text-sm md:text-base text-slate-600 leading-relaxed min-h-[4.2rem] md:min-h-[5rem]">
+                <p className="relative z-10 mt-4 text-sm md:text-base text-slate-600 leading-relaxed min-h-[4.2rem] md:min-h-[5rem] md:whitespace-pre-line">
                   {resource.description}
                 </p>
 
