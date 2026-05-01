@@ -100,7 +100,7 @@ const resources = [
     description:
       "コミュニティ専属AIです。\n「参加費はかかるの？」など細かな疑問も気軽に聞けます。",
     linkLabel: "専用AIに相談する",
-    url: "https://notebooklm.google.com/notebook/54975bed-ea17-4aae-a9d3-18515bf650c2",
+    url: "https://notebooklm.google.com/notebook/81622d4b-dbcb-4a6c-a2c1-19828092a7a8",
     icon: <Sparkles className="h-8 w-8 md:h-9 md:w-9 text-cyan-600" />,
     border: "border-cyan-500/30",
     gradient: "from-cyan-500/20 to-cyan-600/5",
