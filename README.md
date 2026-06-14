@@ -1,30 +1,78 @@
-# 簡単なAIチャット
+# We部 Webサイト
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+Web系優良企業への内定を目指すコミュニティ「We部」の公式サイトです。
+Next.js で構築されています。
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/rion0918s-projects/v0-ai)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/jWjeqJDawYT)
+## 必要な環境
 
-## Overview
+- Node.js 20.9 以上
+- pnpm
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+pnpm が入っていない場合は、Node.js に同梱されている Corepack から有効化できます。
 
-## Deployment
+```bash
+corepack enable
+```
 
-Your project is live at:
+## ローカルで起動する
 
-**[https://vercel.com/rion0918s-projects/v0-ai](https://vercel.com/rion0918s-projects/v0-ai)**
+依存関係をインストールします。
 
-## Build your app
+```bash
+pnpm install
+```
 
-Continue building your app on:
+開発サーバーを起動します。
 
-**[https://v0.app/chat/jWjeqJDawYT](https://v0.app/chat/jWjeqJDawYT)**
+```bash
+pnpm dev
+```
 
-## How It Works
+ブラウザで以下を開きます。
 
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```text
+http://localhost:3000
+```
+
+## よく使うコマンド
+
+```bash
+# 開発サーバーを起動
+pnpm dev
+
+# production build を作成
+pnpm build
+
+# build 済みのアプリを起動
+pnpm start
+
+# lint を実行
+pnpm lint
+```
+
+## production build をローカルで確認する
+
+本番相当の動作を確認したい場合は、build 後に start します。
+
+```bash
+pnpm build
+pnpm start
+```
+
+`pnpm start` は build 済みの `.next` ディレクトリを使うため、先に `pnpm build` を実行してください。
+
+## ディレクトリ構成
+
+```text
+app/          Next.js App Router のページとレイアウト
+components/   画面を構成する React コンポーネント
+components/ui UI 共通コンポーネント
+lib/          ユーティリティやアニメーション定義
+public/       画像、favicon などの静的ファイル
+styles/       グローバルCSS
+```
+
+## 補足
+
+- lockfile は `pnpm-lock.yaml` です。依存関係の更新も pnpm で行ってください。
+- このプロジェクトでは TypeScript の build error を Next.js 設定で無視するようになっています。型の問題は別途確認してください。
