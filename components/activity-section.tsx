@@ -9,8 +9,6 @@ import {
 } from "framer-motion";
 import {
   ExternalLink,
-  Trophy,
-  Users,
   Rocket,
   Briefcase,
   BookOpen,
@@ -27,7 +25,7 @@ const activities = [
       "約2ヶ月の開発サイクルで企画からリリースまでを実践。\n設計・開発・運用まで一連の流れをここで体験しよう!",
     detail:
       "技術選定や開発の進め方は、\n先輩や強強エンジニアにどんどん聞いていこう！！",
-    tag: "週1 / OPTiM Club KOBE",
+    tag: "週1 / OPTiM Club KOBE・オンラインでもくもく会",
     icon: <Rocket className="h-10 w-10 md:h-12 md:w-12 text-orange-500" />,
     gradient: "from-orange-500/20 to-orange-600/5",
     border: "border-orange-500/30",
@@ -35,35 +33,6 @@ const activities = [
   },
   {
     id: "02",
-    title: "ハッカソン出場",
-    subtitle: "Hackathon Challenge",
-    description:
-      "チームで外部のハッカソンに参加し、実践的な開発経験を積みます。",
-    detail:
-      "外部ハッカソンで受賞すれば就職活動の実績として超強力な武器になります。",
-    tag: "年に1度 / 任意",
-    linkLabel: "技育展 2025 (例)",
-    linkUrl: "https://geek.supporterz.jp/geekten/2025",
-    icon: <Trophy className="h-10 w-10 md:h-12 md:w-12 text-yellow-500" />,
-    gradient: "from-yellow-500/20 to-yellow-600/5",
-    border: "border-yellow-500/30",
-    accent: "bg-yellow-500",
-  },
-  {
-    id: "03",
-    title: "情報共有ラフ会",
-    subtitle: "Knowledge Share",
-    description:
-      "就活情報や企業研究、技術トーク、面接対策まで\nメンバー同士で実体験ベースに共有します。",
-    detail: "有料企業や大手の情報は、\n学校だけではなかなか手に入りません！",
-    tag: "月1 / ハイブリッド",
-    icon: <Users className="h-10 w-10 md:h-12 md:w-12 text-blue-500" />,
-    gradient: "from-blue-500/20 to-blue-600/5",
-    border: "border-blue-500/30",
-    accent: "bg-blue-500",
-  },
-  {
-    id: "04",
     title: "先輩の就活知見",
     subtitle: "Career Knowledge Base",
     description:
@@ -269,11 +238,6 @@ export function ActivitySection() {
           </h2>
           <p className="text-base md:text-2xl text-slate-400 font-medium tracking-wider uppercase">
             Our Program
-          </p>
-          <p className="mt-6 md:mt-8 text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            週に一度の定例会をはじめ、ハッカソンや就活対策など
-            <br className="hidden md:block" />
-            エンジニアとして自走するための環境を本気で用意しています。
           </p>
         </motion.div>
 

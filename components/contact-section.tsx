@@ -5,8 +5,6 @@ import { MessageSquareHeart, Send } from "lucide-react";
 import { motion } from "framer-motion";
 import { scaleIn } from "@/lib/animations";
 
-const perks = ["初学者歓迎！！", "Web系企業志望者向け", "実務経験積みましょう"];
-
 export function ContactSection() {
   return (
     <section id="contact" className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 relative isolate">
@@ -33,17 +31,6 @@ export function ContactSection() {
           一緒に成長できる仲間をお待ちしています。
         </p>
 
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8 md:mb-12">
-          {perks.map((perk) => (
-            <span
-              key={perk}
-              className="px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-white/80 border border-primary/10 text-xs md:text-sm font-bold text-primary shadow-sm"
-            >
-              {perk}
-            </span>
-          ))}
-        </div>
-
         <div className="flex flex-col items-center gap-4 md:gap-6">
           <Button
             asChild
@@ -68,4 +55,3 @@ export function ContactSection() {
     </section>
   );
 }
-

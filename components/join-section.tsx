@@ -14,14 +14,6 @@ export function JoinSection() {
         <section className="bg-background py-16 sm:py-24 md:py-32 px-4 relative overflow-hidden">
             <div className="max-w-7xl mx-auto">
                 <div className="text-center mb-10 sm:mb-14 md:mb-20 relative z-10">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-xs font-bold tracking-wider uppercase mb-6"
-                    >
-                        Process
-                    </motion.span>
                     <motion.h3
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}

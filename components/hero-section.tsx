@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, HelpCircle, Sparkles, X, CheckCircle2 } from "lucide-react";
-import { motion, useScroll, useTransform, AnimatePresence, useSpring, useVelocity, useAnimationFrame } from "framer-motion";
+import { ArrowRight, HelpCircle, Sparkles, CheckCircle2 } from "lucide-react";
+import { motion, useScroll, useTransform, useSpring, useVelocity, useAnimationFrame } from "framer-motion";
 import { fadeInUp, staggerContainer, reveal, scaleIn } from "@/lib/animations";
 
 // Utility for wrapping numbers
@@ -71,7 +71,6 @@ function ParallaxText({ children, baseVelocity = 100 }: { children: string; base
 }
 
 export function HeroSection() {
-  const [showWebExplain, setShowWebExplain] = useState(false);
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -107,83 +106,6 @@ export function HeroSection() {
         animate="visible"
         className="mx-auto w-full max-w-7xl px-4 md:px-6 text-center relative z-10 flex flex-col items-center justify-center min-h-[45vh] sm:min-h-[50vh] md:min-h-[60vh]"
       >
-        <motion.div variants={fadeInUp} className="flex justify-center mb-6 md:mb-8">
-          {/* Badge code identical to before */}
-          <div className="group relative inline-flex items-center gap-2 rounded-full border border-primary/20 bg-white/50 px-3 py-1.5 md:px-4 text-xs md:text-sm font-medium text-primary backdrop-blur-md transition-all hover:bg-white/80 hover:shadow-lg hover:border-primary/40 cursor-default">
-            <Sparkles className="h-3 w-3 md:h-4 md:w-4 animate-spin-slow" />
-            <span className="bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent transform md:translate-y-[1px]">
-              Web技術好きと初学者歓迎!!
-            </span>
-            <span className="hidden sm:inline text-muted-foreground/50 mx-1">|</span>
-            <span className="hidden sm:inline text-muted-foreground">立ち上げメンバーは堅物じゃないです</span>
-
-            <button
-              onClick={() => setShowWebExplain(true)}
-              className="ml-2 flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 md:px-2.5 text-[10px] md:text-xs font-bold text-primary transition hover:bg-primary hover:text-white"
-            >
-              <HelpCircle className="h-3 w-3" />
-              <span>Web企業って？</span>
-            </button>
-          </div>
-        </motion.div>
-
-        {/* Modal Logic (Preserved) */}
-        <AnimatePresence>
-          {showWebExplain && (
-            <>
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 z-40 bg-black/40 backdrop-blur-sm"
-                onClick={() => setShowWebExplain(false)}
-              />
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95, y: "-40%", x: "-50%" }}
-                animate={{ opacity: 1, scale: 1, y: "-50%", x: "-50%" }}
-                exit={{ opacity: 0, scale: 0.95, y: "-40%", x: "-50%" }}
-                className="fixed left-1/2 top-1/2 z-50 w-[90vw] md:w-[min(92vw,36rem)] max-h-[85vh] overflow-y-auto rounded-3xl border border-white/20 bg-white/90 p-6 md:p-8 text-left shadow-2xl backdrop-blur-xl ring-1 ring-black/5"
-              >
-                {/* Modal Content - Preserved */}
-                <div className="mb-6 flex items-center justify-between">
-                  <h3 className="text-xl font-bold text-foreground">Web系企業って？</h3>
-                  <button
-                    onClick={() => setShowWebExplain(false)}
-                    className="rounded-full bg-muted p-2 text-muted-foreground hover:bg-muted/80 transition-colors"
-                  >
-                    <X className="h-4 w-4" />
-                  </button>
-                </div>
-                <div className="space-y-4 text-muted-foreground leading-relaxed text-sm md:text-base">
-                  <p>
-                    ECサイト、動画配信、求人プラットフォームなどのWebサービスやSaaSを開発・運営する企業全般。
-                    エンジニア、デザイナー、PdMがオンラインで価値を届ける会社をイメージしてください。
-                  </p>
-                  <div>
-                    <p className="mb-2 text-sm font-semibold text-primary">たとえばこんな企業</p>
-                    <ul className="space-y-2 text-sm">
-                      {[
-                        { name: "LINEヤフー", desc: "日常インフラをオンラインで提供" },
-                        { name: "サイバーエージェント", desc: "ABEMAや人気ゲームなどを運営" },
-                        { name: "ZOZO", desc: "「ZOZOTOWN」等ファッションECを展開" },
-                        { name: "DMM.com", desc: "動画配信、英会話、3Dプリントなど多角展開" }
-                      ].map((company) => (
-                        <li key={company.name} className="flex items-start gap-2">
-                          <span className="block h-1.5 w-1.5 translate-y-2 rounded-full bg-primary/50" />
-                          <span>
-                            <span className="font-semibold text-foreground">{company.name}</span>
-                            <span className="text-muted-foreground/80">：{company.desc}</span>
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </motion.div>
-            </>
-          )}
-        </AnimatePresence>
-
         <div className="mx-auto max-w-5xl relative">
           <motion.h1 className="text-balance text-[2.5rem] sm:text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] sm:leading-[1.0] md:leading-[0.9] tracking-tighter text-foreground">
             <span className="block overflow-hidden pb-2 md:pb-4">
