@@ -41,7 +41,7 @@ const activities = [
       "就活でやるべきことを先輩の実例から学び、\n次の一歩を具体化できます。",
     tag: "随時更新 / OBOG体験記",
     linkLabel: "先輩の就活知見を読む",
-    linkUrl: "https://webu-portal-web.vercel.app/",
+    linkUrl: "https://web-u.dev/",
     icon: <Briefcase className="h-10 w-10 md:h-12 md:w-12 text-emerald-600" />,
     gradient: "from-emerald-500/20 to-emerald-600/5",
     border: "border-emerald-500/30",
