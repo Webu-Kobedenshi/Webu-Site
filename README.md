@@ -5,8 +5,10 @@ Next.js で構築されています。
 
 ## 必要な環境
 
-- Node.js 20.9 以上
+- Node.js 22.23.4 以上（22系）、24.22.1 以上（24系）、または 26.12.1 以上（26系）
 - pnpm
+
+2026年10月の [Node.js セキュリティ更新](https://nodejs.org/en/blog/vulnerability/october-2026-security-releases)を適用したバージョンを使用してください。本番ホスティング環境の Node.js も更新し、依存関係の更新後は再ビルド・再デプロイしてください。
 
 pnpm が入っていない場合は、Node.js に同梱されている Corepack から有効化できます。
 
