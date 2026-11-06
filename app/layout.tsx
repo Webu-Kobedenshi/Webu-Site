@@ -2,6 +2,8 @@ import type React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
@@ -10,12 +12,10 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
-// <CHANGE> Updated metadata for We部
 export const metadata: Metadata = {
-  title: "We部 | Web系優良企業内定を目指すコミュニティ",
+  title: "Webu (We部) | 学校の「あったらいいな」を、僕らの手で。",
   description:
-    "Web系優良企業内定を目指す仲間と共に学び、成長するコミュニティ。情報共有、スキルアップ、就活対策を一緒に。",
-  generator: "v0.app",
+    "Webuは、神戸電子をもっと便利に、もっとおもしろくするサービスを仲間と生み出す、学生主体の開発コミュニティです。チーム開発、Git講座、知識共有を通じて、身近なアイデアを形にします。",
   icons: {
     icon: [
       {
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon-32x32.png",
   },
   openGraph: {
-    title: "We部 | Web系優良企業内定を目指すコミュニティ",
+    title: "Webu (We部) | 学校の「あったらいいな」を、僕らの手で。",
     description:
-      "Web系優良企業内定を目指す仲間と共に学び、成長するコミュニティ。情報共有、スキルアップ、就活対策を一緒に。",
+      "神戸電子の学生が、身近なアイデアをサービスに。仲間と学び、つくり、学校をもっとおもしろくする開発コミュニティ。",
     images: [
       {
         url: "/webu-logo.png",
@@ -47,15 +47,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "We部 | Web系優良企業内定を目指すコミュニティ",
+    title: "Webu (We部) | 学校の「あったらいいな」を、僕らの手で。",
     description:
-      "Web系優良企業内定を目指す仲間と共に学び、成長するコミュニティ。情報共有、スキルアップ、就活対策を一緒に。",
+      "神戸電子の学生が、身近なアイデアをサービスに。仲間と学び、つくり、学校をもっとおもしろくする開発コミュニティ。",
     images: ["/webu-logo.png"],
   },
 };
-
-import { SmoothScroll } from "@/components/smooth-scroll";
-import { NoiseOverlay } from "@/components/noise-overlay";
 
 export default function RootLayout({
   children,
@@ -63,14 +60,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" data-scroll-behavior="smooth">
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        <SmoothScroll>
-          <NoiseOverlay />
-          {children}
-        </SmoothScroll>
+        <div id="top">
+          <a href="#main-content" className="skip-link">本文へスキップ</a>
+          <Header />
+          <main id="main-content" tabIndex={-1}>{children}</main>
+          <Footer />
+        </div>
         <Analytics />
       </body>
     </html>

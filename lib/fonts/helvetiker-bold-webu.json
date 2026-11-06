@@ -1,0 +1,60 @@
+{
+  "glyphs": {
+    "W": {
+      "x_min": 0,
+      "x_max": 1291.671875,
+      "ha": 1399,
+      "o": "m 1291 1013 l 1002 0 l 802 0 l 645 777 l 490 0 l 288 0 l 0 1013 l 215 1013 l 388 298 l 534 1012 l 757 1013 l 904 299 l 1076 1013 l 1291 1013 "
+    },
+    "e": {
+      "x_min": 0,
+      "x_max": 708,
+      "ha": 808,
+      "o": "m 708 321 l 207 321 q 254 186 207 236 q 362 141 298 141 q 501 227 453 141 l 700 227 q 566 36 662 104 q 362 -26 477 -26 q 112 72 213 -26 q 0 369 0 182 q 95 683 0 573 q 358 793 191 793 q 619 677 531 793 q 708 321 708 561 m 501 453 q 460 571 501 531 q 353 612 420 612 q 247 570 287 612 q 207 453 207 529 l 501 453 "
+    },
+    "b": {
+      "x_min": 0,
+      "x_max": 722,
+      "ha": 822,
+      "o": "m 416 -26 q 289 6 346 -26 q 192 101 232 39 l 192 0 l 0 0 l 0 1013 l 192 1013 l 192 656 q 286 743 226 712 q 415 775 346 775 q 649 644 564 775 q 722 374 722 533 q 649 106 722 218 q 416 -26 565 -26 m 361 600 q 232 524 279 600 q 192 371 192 459 q 229 221 192 284 q 357 145 275 145 q 487 221 441 145 q 526 374 526 285 q 488 523 526 460 q 361 600 442 600 "
+    },
+    "u": {
+      "x_min": 0,
+      "x_max": 668,
+      "ha": 782,
+      "o": "m 668 0 l 474 0 l 474 89 q 363 9 425 37 q 233 -19 301 -19 q 61 53 123 -19 q 0 239 0 126 l 0 749 l 199 749 l 199 296 q 225 193 199 233 q 316 146 257 146 q 424 193 380 146 q 469 304 469 240 l 469 749 l 668 749 l 668 0 "
+    }
+  },
+  "cssFontWeight": "bold",
+  "ascender": 1216,
+  "underlinePosition": -100,
+  "cssFontStyle": "normal",
+  "boundingBox": {
+    "yMin": -333,
+    "xMin": -162,
+    "yMax": 1216,
+    "xMax": 1681
+  },
+  "resolution": 1000,
+  "original_font_information": {
+    "postscript_name": "Helvetiker-Bold",
+    "version_string": "Version 1.00 2004 initial release",
+    "vendor_url": "http://www.magenta.gr",
+    "full_font_name": "Helvetiker Bold",
+    "font_family_name": "Helvetiker",
+    "copyright": "Copyright (c) Magenta ltd, 2004.",
+    "description": "",
+    "trademark": "",
+    "designer": "",
+    "designer_url": "",
+    "unique_font_identifier": "Magenta ltd:Helvetiker Bold:22-10-104",
+    "license_url": "http://www.ellak.gr/fonts/MgOpen/license.html",
+    "license_description": "Copyright (c) 2004 by MAGENTA Ltd. All Rights Reserved.\r\n\r\nPermission is hereby granted, free of charge, to any person obtaining a copy of the fonts accompanying this license (\"Fonts\") and associated documentation files (the \"Font Software\"), to reproduce and distribute the Font Software, including without limitation the rights to use, copy, merge, publish, distribute, and/or sell copies of the Font Software, and to permit persons to whom the Font Software is furnished to do so, subject to the following conditions: \r\n\r\nThe above copyright and this permission notice shall be included in all copies of one or more of the Font Software typefaces.\r\n\r\nThe Font Software may be modified, altered, or added to, and in particular the designs of glyphs or characters in the Fonts may be modified and additional glyphs or characters may be added to the Fonts, only if the fonts are renamed to names not containing the word \"MgOpen\", or if the modifications are accepted for inclusion in the Font Software itself by the each appointed Administrator.\r\n\r\nThis License becomes null and void to the extent applicable to Fonts or Font Software that has been modified and is distributed under the \"MgOpen\" name.\r\n\r\nThe Font Software may be sold as part of a larger software package but no copy of one or more of the Font Software typefaces may be sold by itself. \r\n\r\nTHE FONT SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL MAGENTA OR PERSONS OR BODIES IN CHARGE OF ADMINISTRATION AND MAINTENANCE OF THE FONT SOFTWARE BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.",
+    "manufacturer_name": "Magenta ltd",
+    "font_sub_family_name": "Bold"
+  },
+  "descender": -334,
+  "familyName": "Helvetiker",
+  "lineHeight": 1549,
+  "underlineThickness": 50
+}
