@@ -627,6 +627,22 @@ body:has(.home-experience) .footer-bottom p { font-size: 11px; }
   .home-experience .sculpture canvas { mask-image: linear-gradient(90deg, #0003 var(--scene-mask-left, 60%), #000 calc(var(--scene-mask-left, 60%) + 25vw), #000 calc(100% - var(--scene-mask-right, 0%) - 25vw), #0003 calc(100% - var(--scene-mask-right, 0%))); }
   .home-experience .sculpture[data-scene-state="ready"]:not([data-motion-paused="true"]) canvas { opacity: var(--scene-crossing-opacity, 1); }
   .home-experience .hero-copy { background: transparent; }
+  .home-experience section:not(#home-top) h2,
+  .home-experience section:not(#home-top) h3,
+  .home-experience section:not(#home-top) p,
+  .home-experience section:not(#home-top) dt,
+  .home-experience section:not(#home-top) dd,
+  .home-experience .activity-weekday,
+  .home-experience .activity-hours,
+  .home-experience .activity-venue,
+  .home-experience .home-next-links a {
+    text-shadow: 0 0 10px var(--background), 0 0 20px var(--background);
+  }
+  .home-experience .activity-photos h2,
+  .home-experience .activity-photos p,
+  .home-experience .activity-photos figcaption {
+    text-shadow: 0 0 10px #20251f, 0 0 20px #20251f;
+  }
   .home-experience .sculpture-gesture { left: 80%; width: 38vw; top: 50vh; height: 45vh; }
   .home-experience .about-copy, .home-experience .about-title h2,
   .home-experience .activity-info, .home-experience .activity-heading h2,
@@ -658,6 +674,22 @@ body:has(.home-experience) .footer-bottom p { font-size: 11px; }
   .home-experience .sculpture-poster { left: 0 !important; width: 100% !important; bottom: auto !important; height: var(--scene-intro-height) !important; }
   .home-experience .sculpture-gesture { top: var(--header-height); left: 0; width: 100vw; height: var(--scene-intro-height); transform: none; border-radius: 0; }
   .home-experience .hero-copy { background: transparent; }
+  .home-experience section:not(#home-top) h2,
+  .home-experience section:not(#home-top) h3,
+  .home-experience section:not(#home-top) p,
+  .home-experience section:not(#home-top) dt,
+  .home-experience section:not(#home-top) dd,
+  .home-experience .activity-weekday,
+  .home-experience .activity-hours,
+  .home-experience .activity-venue,
+  .home-experience .home-next-links a {
+    text-shadow: 0 0 10px var(--background), 0 0 20px var(--background);
+  }
+  .home-experience .activity-photos h2,
+  .home-experience .activity-photos p,
+  .home-experience .activity-photos figcaption {
+    text-shadow: 0 0 10px #20251f, 0 0 20px #20251f;
+  }
   .home-experience .hero-stage { box-sizing: border-box; padding-top: var(--scene-intro-height); }
   .home-experience .learning-section { background: linear-gradient(180deg, transparent, #dfe3d9c4 48px, #dfe3d9c4 calc(100% - 48px), transparent); }
   .home-experience .activity-photos { background: linear-gradient(180deg, transparent, #20251fd9 48px, #20251fd9 calc(100% - 48px), transparent); }
@@ -722,7 +754,9 @@ body:has(.home-experience) .footer-bottom p { font-size: 11px; }
 .home-section-menu { position: absolute; bottom: 54px; left: 0; display: grid; min-width: 220px; padding: 8px; border: 1px solid var(--border); border-radius: 12px; background: var(--background); box-shadow: 0 12px 32px #20231f24; }
 .home-section-menu a { display: flex; align-items: center; min-height: 44px; padding: 8px 12px; border-radius: 6px; font-size: 14px; font-weight: 550; }
 .home-section-menu a:hover, .home-section-menu a:focus-visible { background: #dce0d4; }
-@media (max-width: 767px) { .home-section-nav { left: 12px; bottom: 12px; } }
+@media (max-width: 1023px) {
+  .home-section-nav { display: none !important; }
+}
 
 .home-section-menu-desktop { display: none; }
 .home-section-menu a { gap: 20px; font-family: var(--font-geist-sans), sans-serif; font-size: 13px; letter-spacing: .03em; }

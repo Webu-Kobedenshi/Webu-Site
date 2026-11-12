@@ -29,12 +29,12 @@ const desktopPoses: Record<string, ScenePose> = {
 
 const compactPoses: Record<string, ScenePose> = {
   hero: { camera: [0.35, 0.85, 4.1], lookAt: [0.08, -0.05, 0], rotation: [-0.08, -0.4, -0.12], light: [-3, 5, 4], frameX: 0, frameY: 0.25, scale: 0.56, opacity: 1 },
-  about: { camera: [0.9, 0.5, 3.6], lookAt: [0, 0, 0], rotation: [-0.1, 0.35, 0.06], light: [-1.5, 4.5, 3], frameX: -0.16, frameY: -0.22, scale: 0.56, opacity: 0.24 },
-  learning: { camera: [-0.6, 0.3, 3.4], lookAt: [0, 0, 0], rotation: [-0.1, -0.3, -0.08], light: [-1, 4, 3], frameX: 0.18, frameY: 0.04, scale: 0.56, opacity: 0.18 },
-  photos: { camera: [0, 0.2, 3.2], lookAt: [0, 0, 0], rotation: [0.08, -0.1, 0.12], light: [0, 4, 4], frameX: 0, frameY: 0, scale: 0.56, opacity: 0.12 },
-  activity: { camera: [0.6, 0.6, 3.5], lookAt: [0, 0, 0], rotation: [-0.06, 0.25, 0.04], light: [-1.5, 4.5, 3], frameX: -0.16, frameY: -0.2, scale: 0.56, opacity: 0.24 },
-  links: { camera: [0.1, 0.4, 4.0], lookAt: [0, 0, 0], rotation: [-0.04, -0.15, -0.04], light: [-3, 5, 4], frameX: 0, frameY: 0.24, scale: 0.56, opacity: 0.32 },
-  exit: { camera: [0.1, 0.4, 4.0], lookAt: [0, 0, 0], rotation: [-0.04, -0.15, -0.04], light: [-3, 5, 4], frameX: 0, frameY: 0.24, scale: 0.56, opacity: 0.32 },
+  about: { camera: [0.9, 0.5, 3.6], lookAt: [0, 0, 0], rotation: [-0.1, 0.35, 0.06], light: [-1.5, 4.5, 3], frameX: -0.22, frameY: -0.18, scale: 0.54, opacity: 0.12 },
+  learning: { camera: [-0.6, 0.3, 3.4], lookAt: [0, 0, 0], rotation: [-0.1, -0.3, -0.08], light: [-1, 4, 3], frameX: 0.16, frameY: 0.05, scale: 0.54, opacity: 0.09 },
+  photos: { camera: [0, 0.2, 3.2], lookAt: [0, 0, 0], rotation: [0.08, -0.1, 0.12], light: [0, 4, 4], frameX: 0, frameY: 0, scale: 0.54, opacity: 0.08 },
+  activity: { camera: [0.6, 0.6, 3.5], lookAt: [0, 0, 0], rotation: [-0.06, 0.25, 0.04], light: [-1.5, 4.5, 3], frameX: -0.22, frameY: -0.16, scale: 0.54, opacity: 0.11 },
+  links: { camera: [0.1, 0.4, 4.0], lookAt: [0, 0, 0], rotation: [-0.04, -0.15, -0.04], light: [-3, 5, 4], frameX: 0.12, frameY: 0.16, scale: 0.54, opacity: 0.14 },
+  exit: { camera: [0.1, 0.4, 4.0], lookAt: [0, 0, 0], rotation: [-0.04, -0.15, -0.04], light: [-3, 5, 4], frameX: 0.12, frameY: 0.16, scale: 0.54, opacity: 0 },
 };
 
 const stopNames = ["hero", "about", "learning", "photos", "activity", "links", "exit"] as const;
@@ -344,7 +344,7 @@ export function FloatingSculpture() {
           chrome.opacity = currentPose.opacity;
           orange.opacity = currentPose.opacity;
           sculpture.visible = currentPose.opacity > 0.005;
-          shadow.visible = (!compact || renderHeight > 150) && sculpture.visible;
+          shadow.visible = (!compact || heroVisible) && sculpture.visible;
           shadow.position.y = compact ? -0.8 : -0.95;
           shadow.scale.setScalar(compact ? 0.6 : currentPose.scale * 1.1);
           shadowMaterial.uniforms.opacity.value = currentPose.opacity * 0.24;
