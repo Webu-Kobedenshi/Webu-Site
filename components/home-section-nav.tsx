@@ -16,6 +16,10 @@ export function HomeSectionNav() {
 
   useEffect(() => {
     const update = () => {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
+        setActive(sections[sections.length - 1].id);
+        return;
+      }
       const threshold = window.innerHeight * 0.4;
       let current = sections[0].id;
       for (const section of sections) {

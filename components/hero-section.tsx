@@ -22,6 +22,10 @@ export function HeroSection() {
               </div>
               <a href="#about" className="hero-about-link text-link">Webuについて知る <ArrowDownRight size={18} aria-hidden="true" /></a>
             </div>
+            <a href="#about" className="hero-scroll-cue" aria-label="Webuについて知る">
+              <span>SCROLL</span>
+              <span className="hero-scroll-line" aria-hidden="true" />
+            </a>
           </div>
         </div>
       </section>

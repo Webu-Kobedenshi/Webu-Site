@@ -13,6 +13,7 @@ type ScenePose = {
   light: Vector3;
   scale: number;
   frameX: number;
+  frameY?: number;
   opacity: number;
 };
 
@@ -27,13 +28,13 @@ const desktopPoses: Record<string, ScenePose> = {
 };
 
 const compactPoses: Record<string, ScenePose> = {
-  hero: { camera: [0, 0, 4.2], lookAt: [0, 0, 0], rotation: [-0.12, -0.35, -0.12], light: [-3, 5, 4], frameX: 0, scale: 0.56, opacity: 1 },
-  about: { camera: [0.7, 0.4, 3.3], lookAt: [0, 0, 0], rotation: [-0.1, 0.05, 0.04], light: [-1.5, 4.5, 3], frameX: 0, scale: 0.56, opacity: 0.96 },
-  learning: { camera: [-0.3, 0.3, 3.5], lookAt: [0, 0, 0], rotation: [-0.1, -0.12, -0.04], light: [-1, 4, 3], frameX: 0, scale: 0.56, opacity: 0.94 },
-  photos: { camera: [0.2, 0.12, 3.8], lookAt: [0, 0, 0], rotation: [0.08, -0.18, -0.04], light: [0, 4, 4], frameX: 0, scale: 0.56, opacity: 0.9 },
-  activity: { camera: [0.4, 0.5, 3.4], lookAt: [0, 0, 0], rotation: [-0.06, 0.1, 0.02], light: [-1.5, 4.5, 3], frameX: 0, scale: 0.56, opacity: 0.94 },
-  links: { camera: [0.1, 0, 4.3], lookAt: [0, 0, 0], rotation: [0, 0.12, 0], light: [-3, 5, 4], frameX: 0, scale: 0.56, opacity: 0.96 },
-  exit: { camera: [0.1, 0, 4.3], lookAt: [0, 0, 0], rotation: [0, 0.12, 0], light: [-3, 5, 4], frameX: 0, scale: 0.56, opacity: 0.96 },
+  hero: { camera: [0.35, 0.85, 4.1], lookAt: [0.08, -0.05, 0], rotation: [-0.08, -0.4, -0.12], light: [-3, 5, 4], frameX: 0, frameY: 0.25, scale: 0.56, opacity: 1 },
+  about: { camera: [0.9, 0.5, 3.6], lookAt: [0, 0, 0], rotation: [-0.1, 0.35, 0.06], light: [-1.5, 4.5, 3], frameX: -0.16, frameY: -0.22, scale: 0.56, opacity: 0.24 },
+  learning: { camera: [-0.6, 0.3, 3.4], lookAt: [0, 0, 0], rotation: [-0.1, -0.3, -0.08], light: [-1, 4, 3], frameX: 0.18, frameY: 0.04, scale: 0.56, opacity: 0.18 },
+  photos: { camera: [0, 0.2, 3.2], lookAt: [0, 0, 0], rotation: [0.08, -0.1, 0.12], light: [0, 4, 4], frameX: 0, frameY: 0, scale: 0.56, opacity: 0.12 },
+  activity: { camera: [0.6, 0.6, 3.5], lookAt: [0, 0, 0], rotation: [-0.06, 0.25, 0.04], light: [-1.5, 4.5, 3], frameX: -0.16, frameY: -0.2, scale: 0.56, opacity: 0.24 },
+  links: { camera: [0.1, 0.4, 4.0], lookAt: [0, 0, 0], rotation: [-0.04, -0.15, -0.04], light: [-3, 5, 4], frameX: 0, frameY: 0.24, scale: 0.56, opacity: 0.32 },
+  exit: { camera: [0.1, 0.4, 4.0], lookAt: [0, 0, 0], rotation: [-0.04, -0.15, -0.04], light: [-3, 5, 4], frameX: 0, frameY: 0.24, scale: 0.56, opacity: 0.32 },
 };
 
 const stopNames = ["hero", "about", "learning", "photos", "activity", "links", "exit"] as const;
@@ -46,6 +47,7 @@ function clonePose(pose: ScenePose): ScenePose {
     light: [...pose.light],
     scale: pose.scale,
     frameX: pose.frameX,
+    frameY: pose.frameY ?? 0,
     opacity: pose.opacity,
   };
 }
@@ -78,6 +80,7 @@ function interpolatePose(from: ScenePose, to: ScenePose, amount: number): SceneP
     light: mix(from.light, to.light),
     scale: from.scale + (to.scale - from.scale) * amount,
     frameX: from.frameX + (to.frameX - from.frameX) * amount,
+    frameY: (from.frameY ?? 0) + ((to.frameY ?? 0) - (from.frameY ?? 0)) * amount,
     opacity: from.opacity + (to.opacity - from.opacity) * amount,
   };
 }
@@ -122,7 +125,7 @@ export function FloatingSculpture() {
     let currentPose = clonePose(desktopPoses.hero);
     let cameraOrbit = toCameraOrbit(currentPose.camera);
     let poseVelocity: ScenePose = {
-      camera: [0, 0, 0], lookAt: [0, 0, 0], rotation: [0, 0, 0], light: [0, 0, 0], scale: 0, frameX: 0, opacity: 0,
+      camera: [0, 0, 0], lookAt: [0, 0, 0], rotation: [0, 0, 0], light: [0, 0, 0], scale: 0, frameX: 0, frameY: 0, opacity: 0,
     };
     const cleanups: (() => void)[] = [];
     const release = () => cleanups.splice(0).reverse().forEach((cleanup) => cleanup());
@@ -255,28 +258,32 @@ export function FloatingSculpture() {
           compact = nextCompact;
           const poses = compact ? compactPoses : desktopPoses;
           const nextStops: Array<{ position: number; pose: ScenePose }> = [];
+          const headerHeight = window.innerWidth < 768 ? 66 : 76;
+          const railHeight = 0;
+          const scrollOffset = headerHeight + railHeight;
           for (const name of stopNames.slice(0, -1)) {
             const marker = markers.find((item) => item.name === name)?.element;
             if (!marker) continue;
             const bounds = marker.getBoundingClientRect();
-            const start = Math.max(0, bounds.top - rootBounds.top - window.innerHeight * 0.55);
-            const advance = name === "hero" ? 0 : Math.min(bounds.height * (compact ? 0.2 : 0.28), compact ? 90 : 180);
-            const position = name === "links"
-              ? Math.min(start + advance, Math.max(0, maxProgress - window.innerHeight * 0.8))
-              : start + advance;
+            const anchorPosition = Math.max(0, bounds.top - rootBounds.top - scrollOffset);
+            const position = name === "hero"
+              ? 0
+              : name === "links"
+                ? Math.min(anchorPosition, maxProgress)
+                : anchorPosition;
             nextStops.push({ position, pose: clonePose(poses[name]) });
           }
           nextStops.sort((a, b) => a.position - b.position);
           const photos = markers.find((marker) => marker.name === "photos")?.element;
           if (photos) {
             const bounds = photos.getBoundingClientRect();
-            const railBottom = (window.innerWidth < 768 ? 66 : 76) + Math.min(112, Math.max(80, window.innerHeight * 0.15));
+            const railBottom = (window.innerWidth < 768 ? 66 : 76) + (compact ? 0 : Math.min(112, Math.max(80, window.innerHeight * 0.15)));
             photoRange = { start: bounds.top - rootBounds.top - railBottom, end: bounds.bottom - rootBounds.top - railBottom };
           }
           const lastStop = nextStops[nextStops.length - 1]?.position ?? 0;
           const exitPosition = Math.min(
             lastStop + Math.max(120, window.innerHeight * 0.22),
-            maxProgress - Math.min(80, window.innerHeight * 0.1),
+            maxProgress,
           );
           nextStops.push({ position: exitPosition, pose: clonePose(poses.exit) });
           stops = nextStops;
@@ -290,15 +297,23 @@ export function FloatingSculpture() {
 
         let renderWidth = 0;
         let renderHeight = 0;
+        const fitCamera = () => {
+          if (!renderWidth || !renderHeight) return;
+          camera.aspect = renderWidth / renderHeight;
+          // On tall phone canvases keep the horizontal field of view so the wordmark fits the width.
+          const baseTan = Math.tan(THREE.MathUtils.degToRad(18));
+          const tan = compact ? Math.max(baseTan, 0.41 / camera.aspect) : baseTan;
+          camera.fov = THREE.MathUtils.radToDeg(2 * Math.atan(tan));
+          camera.updateProjectionMatrix();
+        };
         const resize = () => {
           const { width, height } = sceneSurface.querySelector<HTMLElement>(".sculpture-surface")!.getBoundingClientRect();
           renderWidth = width;
           renderHeight = height;
           if (!width || !height) return;
-          camera.aspect = width / height;
-          camera.updateProjectionMatrix();
-          renderer.setSize(width, height, false);
           buildStops();
+          fitCamera();
+          renderer.setSize(width, height, false);
           if (motionPaused) setHeroPose();
           else render(performance.now());
         };
@@ -306,10 +321,17 @@ export function FloatingSculpture() {
         const applyPose = () => {
           camera.position.set(...currentPose.camera);
           camera.lookAt(...currentPose.lookAt);
-          camera.setViewOffset(renderWidth, renderHeight, renderWidth * currentPose.frameX, 0, renderWidth, renderHeight);
+          camera.setViewOffset(renderWidth, renderHeight, renderWidth * currentPose.frameX, renderHeight * (currentPose.frameY ?? 0), renderWidth, renderHeight);
+          const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+          const distToBottom = maxScroll - window.scrollY;
+          const suctionDamping = THREE.MathUtils.clamp(distToBottom / 180, 0, 1);
+          const idleTime = compact && !motionPaused ? performance.now() / 1000 : 0;
+          const idleX = idleTime ? Math.sin(idleTime * 0.8) * 0.035 * suctionDamping : 0;
+          const idleY = idleTime ? Math.sin(idleTime * 0.55) * 0.09 * suctionDamping : 0;
+          sculpture.position.y = idleTime ? Math.sin(idleTime * 1.1) * 0.035 * suctionDamping : 0;
           sculpture.rotation.set(
-            currentPose.rotation[0] + userRotation.current.x,
-            currentPose.rotation[1] + userRotation.current.y + userRotation.current.keyboardY,
+            currentPose.rotation[0] + userRotation.current.x + idleX,
+            currentPose.rotation[1] + userRotation.current.y + userRotation.current.keyboardY + idleY,
             currentPose.rotation[2],
           );
           sculpture.scale.setScalar(currentPose.scale);
@@ -333,7 +355,7 @@ export function FloatingSculpture() {
           currentPose = clonePose((compact ? compactPoses : desktopPoses).hero);
           cameraOrbit = toCameraOrbit(currentPose.camera);
           poseVelocity = {
-            camera: [0, 0, 0], lookAt: [0, 0, 0], rotation: [0, 0, 0], light: [0, 0, 0], scale: 0, frameX: 0, opacity: 0,
+            camera: [0, 0, 0], lookAt: [0, 0, 0], rotation: [0, 0, 0], light: [0, 0, 0], scale: 0, frameX: 0, frameY: 0, opacity: 0,
           };
           userRotation.current.x = 0;
           userRotation.current.y = 0;
@@ -349,18 +371,6 @@ export function FloatingSculpture() {
           lastTime = timestamp;
           const rootBounds = homeExperience.getBoundingClientRect();
           const progress = Math.max(0, -rootBounds.top);
-          if (compact) {
-            const rail = Math.min(112, Math.max(80, window.innerHeight * 0.15));
-            const intro = window.innerWidth < 768 ? Math.min(168, Math.max(140, window.innerHeight * 0.2)) : rail;
-            const t = Math.min(1, progress / 220);
-            const height = Math.round((rail + (intro - rail) * (1 - t * t * (3 - 2 * t))) * 10) / 10;
-            if (Math.abs(height - renderHeight) > 0.2) {
-              renderHeight = height;
-              homeExperience.style.setProperty("--mobile-scene-height", `${height}px`);
-              renderer.setSize(renderWidth, height, false);
-              camera.aspect = renderWidth / height;
-            }
-          }
           const nextOverPhotos = progress >= photoRange.start && progress < photoRange.end;
           if (nextOverPhotos !== previousOverPhotos) {
             previousOverPhotos = nextOverPhotos;
@@ -371,6 +381,7 @@ export function FloatingSculpture() {
             previousGestureActive = nextGestureActive;
             setGestureActive(nextGestureActive);
           }
+
           const frame = stops[stops.length - 1];
           let target = frame?.pose ?? clonePose(desktopPoses.hero);
           if (stops.length > 1 && progress <= (frame?.position ?? 0)) {
@@ -383,6 +394,55 @@ export function FloatingSculpture() {
             const eased = raw * raw * (3 - 2 * raw);
             target = interpolatePose(from.pose, to.pose, eased);
           }
+
+          // Realtime suction into footer wordmark as page reaches the bottom
+          const footerWordmark = document.querySelector<HTMLElement>(".footer-wordmark");
+          if (footerWordmark && renderWidth > 0 && renderHeight > 0) {
+            const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+            const remainingToBottom = maxScroll - window.scrollY;
+            const suctionRange = compact ? 280 : 360;
+            const suctionT = THREE.MathUtils.clamp(1 - remainingToBottom / suctionRange, 0, 1);
+
+            if (suctionT > 0) {
+              const easedSuction = suctionT * suctionT * (3 - 2 * suctionT);
+              const fRect = footerWordmark.getBoundingClientRect();
+              const headerH = window.innerWidth < 768 ? 66 : 76;
+              const footerCenterX = fRect.left + fRect.width * 0.48;
+              const footerCenterY = (fRect.top - headerH) + fRect.height * 0.44;
+
+              const targetFrameX = -(footerCenterX - renderWidth / 2) / renderWidth;
+              const targetFrameY = -(footerCenterY - renderHeight / 2) / renderHeight;
+
+              const baseTan = Math.tan(THREE.MathUtils.degToRad(18));
+              const tan = compact ? Math.max(baseTan, 0.41 / (renderWidth / renderHeight)) : baseTan;
+              const targetScale = THREE.MathUtils.clamp(
+                (fRect.width / renderHeight) * (2 * 4.0 * tan) / 4.5,
+                compact ? 0.20 : 0.28,
+                compact ? 0.32 : 0.45
+              );
+
+              // As it gets within 30px of the bottom, it fully dissolves into the 2D logo
+              const fadeRatio = THREE.MathUtils.clamp((remainingToBottom - 20) / 140, 0, 1);
+
+              const footerAbsorbPose: ScenePose = {
+                camera: [0, 0, 4.0],
+                lookAt: [0, 0, 0],
+                rotation: [0, 0, 0],
+                light: [-1.5, 4.5, 3],
+                frameX: targetFrameX,
+                frameY: targetFrameY,
+                scale: targetScale,
+                opacity: fadeRatio * 0.85,
+              };
+
+              target = interpolatePose(target, footerAbsorbPose, easedSuction);
+            }
+
+            const isAbsorbed = remainingToBottom < 28;
+            if (footerWordmark.dataset.absorbed !== String(isAbsorbed)) {
+              footerWordmark.dataset.absorbed = String(isAbsorbed);
+            }
+          }
           if (delta > 0) {
             const targetOrbit = toCameraOrbit(target.camera);
             targetOrbit[0] = nearestAngle(cameraOrbit[0], targetOrbit[0]);
@@ -393,6 +453,9 @@ export function FloatingSculpture() {
             const lightTarget: Vector3 = [target.light[0] + (nextGestureActive ? pointerLight.current.x * 2 : 0), target.light[1] + (nextGestureActive ? pointerLight.current.y : 0), target.light[2]];
             springVector(currentPose.light, poseVelocity.light, lightTarget, delta);
             [currentPose.frameX, poseVelocity.frameX] = springScalar(currentPose.frameX, poseVelocity.frameX, target.frameX, delta);
+            const frameY = springScalar(currentPose.frameY ?? 0, poseVelocity.frameY ?? 0, target.frameY ?? 0, delta);
+            currentPose.frameY = frameY[0];
+            poseVelocity.frameY = frameY[1];
             [currentPose.scale, poseVelocity.scale] = springScalar(currentPose.scale, poseVelocity.scale, target.scale, delta);
             [currentPose.opacity, poseVelocity.opacity] = springScalar(currentPose.opacity, poseVelocity.opacity, target.opacity, delta);
 
