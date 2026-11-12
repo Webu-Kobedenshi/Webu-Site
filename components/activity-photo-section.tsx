@@ -171,8 +171,16 @@ export function ActivityPhotoSection() {
   return (
     <section id="activity-photos" className="activity-photos" data-scene-stop="photos" aria-labelledby="activity-photos-heading">
       <div className="page-width activity-photos-inner">
+        <div className="section-index-bar section-index-bar--dark">
+          <span>03 / CULTURE</span>
+          <span>ACTIVITY ARCHIVE</span>
+        </div>
         <div className="activity-photos-header">
           <div className="activity-photos-copy">
+            <p className="eyebrow">
+              <span className="eyebrow-dot" aria-hidden="true" />
+              活動の雰囲気
+            </p>
             <h2 id="activity-photos-heading">活動の様子</h2>
             <p>
               企画、制作、発表。メンバーが集まり、学びながら形にしています。

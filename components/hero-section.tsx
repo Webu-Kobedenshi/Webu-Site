@@ -7,29 +7,47 @@ export function HeroSection() {
       <section id="home-top" className="hero" data-scene-stop="hero" aria-labelledby="hero-heading">
         <div className="hero-pin">
           <div className="hero-stage page-width">
+            <div className="section-index-bar">
+              <span>00 / KOBE DENSHI</span>
+              <span>STUDENT DEV COMMUNITY</span>
+            </div>
             <div className="hero-copy">
-              <p className="eyebrow hero-intro">神戸電子の学生による開発コミュニティ</p>
+              <p className="eyebrow hero-intro">
+                <span className="eyebrow-dot" aria-hidden="true" />
+                神戸電子の学生による開発コミュニティ
+              </p>
               <h1 id="hero-heading" className="hero-headline">
                 <span>「あったらいいな」を、</span>
                 <span>私たちの手で。</span>
               </h1>
-              <p className="hero-description"><span>学校の課題を、仲間とサービスにする。</span><span>企画から開発、公開後の改善まで。</span></p>
+              <p className="hero-description">
+                <span>学校の課題を、仲間とサービスにする。</span>
+                <span>企画から開発、公開後の改善まで。</span>
+              </p>
               <div className="hero-actions">
                 <Link href="/projects" className="button button-dark">
-                  プロジェクトを見る <ArrowUpRight size={20} aria-hidden="true" />
+                  プロジェクトを見る <ArrowUpRight size={18} aria-hidden="true" />
                 </Link>
-                <Link href="/join" className="text-link">参加方法を見る <ArrowUpRight size={18} aria-hidden="true" /></Link>
+                <Link href="/join" className="button button-outline">
+                  参加方法を見る <ArrowUpRight size={18} aria-hidden="true" />
+                </Link>
               </div>
-              <a href="#about" className="hero-about-link text-link">Webuについて知る <ArrowDownRight size={18} aria-hidden="true" /></a>
+              <a href="#about" className="hero-about-link text-link">
+                Webuについて知る <ArrowDownRight size={18} aria-hidden="true" />
+              </a>
             </div>
             <a href="#about" className="hero-scroll-cue" aria-label="Webuについて知る">
-              <span>SCROLL</span>
+              <span>SCROLL TO EXPLORE</span>
               <span className="hero-scroll-line" aria-hidden="true" />
             </a>
           </div>
         </div>
       </section>
       <section id="about" data-scene-stop="about" className="about-section page-width section-space" aria-labelledby="about-heading">
+        <div className="section-index-bar">
+          <span>01 / ABOUT</span>
+          <span>WHO WE ARE</span>
+        </div>
         <div className="about-title">
           <h2 id="about-heading"><span className="about-kicker">学生コミュニティ</span>Webuとは<span>。</span></h2>
         </div>

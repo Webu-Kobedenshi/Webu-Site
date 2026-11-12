@@ -51,9 +51,16 @@ export function LearningSection() {
       aria-labelledby="learning-heading"
     >
       <div className="page-width">
+        <div className="section-index-bar">
+          <span>02 / PROCESS</span>
+          <span>DEVELOPMENT CYCLE</span>
+        </div>
         <div className="learning-heading">
           <div>
-            <p className="eyebrow">ここで学べること</p>
+            <p className="eyebrow">
+              <span className="eyebrow-dot" aria-hidden="true" />
+              ここで学べること
+            </p>
             <h2 id="learning-heading">
               サービスづくりで、
               <br />

@@ -18,10 +18,30 @@ export default function Home() {
       <ActivityPhotoSection />
       <ActivitySection />
       <section id="home-next" className="home-next page-width" data-scene-stop="links" aria-labelledby="home-next-heading">
+        <div className="section-index-bar">
+          <span>05 / EXPLORE</span>
+          <span>NEXT STEPS</span>
+        </div>
         <h2 id="home-next-heading">プロジェクトと参加方法</h2>
         <div className="home-next-links">
-          <Link href="/projects"><span>プロジェクト</span><ArrowUpRight aria-hidden="true" /></Link>
-          <Link href="/join"><span>参加方法</span><ArrowUpRight aria-hidden="true" /></Link>
+          <Link href="/projects">
+            <span className="home-next-link-label">
+              <span className="home-next-link-index">01 / WORKS</span>
+              <span>プロジェクト</span>
+            </span>
+            <span className="home-next-link-icon" aria-hidden="true">
+              <ArrowUpRight size={22} />
+            </span>
+          </Link>
+          <Link href="/join">
+            <span className="home-next-link-label">
+              <span className="home-next-link-index">02 / JOIN US</span>
+              <span>参加方法</span>
+            </span>
+            <span className="home-next-link-icon" aria-hidden="true">
+              <ArrowUpRight size={22} />
+            </span>
+          </Link>
         </div>
       </section>
     </div>
