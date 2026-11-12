@@ -25,7 +25,7 @@ const learningSteps = [
 
 export function LearningSection() {
   return (
-    <section id="learning" className="learning-section" aria-labelledby="learning-heading">
+    <section id="learning" data-scene-stop="learning" className="learning-section" aria-labelledby="learning-heading">
       <div className="page-width">
         <div className="learning-heading">
           <div>

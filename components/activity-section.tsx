@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 export function ActivitySection() {
   return (
-    <section id="activity" className="activity-section page-width section-space" aria-labelledby="activity-heading">
+    <section id="activity" data-scene-stop="activity" className="activity-section page-width section-space" aria-labelledby="activity-heading">
       <div className="activity-heading">
         <p className="eyebrow">活動案内</p>
         <h2 id="activity-heading">活動日時と場所。</h2>

@@ -7,7 +7,7 @@ export function Footer() {
       <div className="footer-main">
         <div>
           <Link className="wordmark footer-wordmark" href="/" aria-label="Webu ホームへ">Webu<span>.</span></Link>
-          <p>学校の「あったらいいな」を、僕らの手で。</p>
+          <p>学校の「あったらいいな」を、私たちの手で。</p>
           <p className="footer-description">神戸電子の学生による開発コミュニティ</p>
         </div>
         <nav className="footer-links" aria-label="関連リンク">

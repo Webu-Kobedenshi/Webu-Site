@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Webu (We部) | 学校の「あったらいいな」を、僕らの手で。",
+  title: "Webu (We部) | 学校の「あったらいいな」を、私たちの手で。",
   description:
     "Webuは、神戸電子をもっと便利に、もっとおもしろくするサービスを仲間と生み出す、学生主体の開発コミュニティです。チーム開発、Git講座、知識共有を通じて、身近なアイデアを形にします。",
   icons: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon-32x32.png",
   },
   openGraph: {
-    title: "Webu (We部) | 学校の「あったらいいな」を、僕らの手で。",
+    title: "Webu (We部) | 学校の「あったらいいな」を、私たちの手で。",
     description:
       "神戸電子の学生が、身近なアイデアをサービスに。仲間と学び、つくり、学校をもっとおもしろくする開発コミュニティ。",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Webu (We部) | 学校の「あったらいいな」を、僕らの手で。",
+    title: "Webu (We部) | 学校の「あったらいいな」を、私たちの手で。",
     description:
       "神戸電子の学生が、身近なアイデアをサービスに。仲間と学び、つくり、学校をもっとおもしろくする開発コミュニティ。",
     images: ["/webu-logo.png"],
