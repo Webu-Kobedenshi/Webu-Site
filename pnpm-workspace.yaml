@@ -1,0 +1,6 @@
+# pnpm 10.26+ / 11 では、依存のビルドスクリプト (postinstall 等) は許可したものだけが実行され、
+# 未判断のものがあると install がエラーになる (strictDepBuilds)。
+# 以下はいずれもビルド済みバイナリが別パッケージで配布されており、スクリプト実行は不要なので明示的に拒否する。
+allowBuilds:
+  "@tailwindcss/oxide": false
+  unrs-resolver: false

@@ -1,0 +1,42 @@
+# 依存関係の自動更新 (Dependabot)
+# - パッチ更新は 1 つの PR にまとめ、CI (lint + build) が通ったら自動でマージする (.github/workflows/ci.yml)
+# - マイナー更新も 1 つの PR にまとめるが、自動マージはしない (挙動が変わることがあるため人が確認する)
+# - メジャー更新は依存ごとに個別 PR。こちらも人が確認する
+# - 公開直後の版を避けるため、通常の更新には待機期間 (cooldown) を置く。脆弱性修正 (security update) には待機期間はかからない
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "07:00"
+      timezone: "Asia/Tokyo"
+    cooldown:
+      default-days: 3
+      semver-major-days: 14
+    labels:
+      - "dependencies"
+    open-pull-requests-limit: 10
+    groups:
+      patch:
+        update-types:
+          - "patch"
+      minor:
+        update-types:
+          - "minor"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+      timezone: "Asia/Tokyo"
+    cooldown:
+      default-days: 3
+    labels:
+      - "dependencies"
+    groups:
+      actions:
+        patterns:
+          - "*"
